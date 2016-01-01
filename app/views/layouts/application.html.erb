@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>D0A3 Blog</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <%= favicon_link_tag 'favicon.ico' %>
+</head>
+<body class="wood">
+  <div id="wrap" class="boxed">
+  <span id="hline"></span>
+    <%= render 'layouts/header' %>
+
+<%= yield %>
+    <%= render 'layouts/footer' %>
+</div>
+</body>
+</html>

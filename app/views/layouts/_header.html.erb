@@ -1,0 +1,32 @@
+<header>
+  <div class="container">
+    <div class="row">
+      <div class="col-md-1">
+        <%= link_to image_tag("logo.png", :class => "imgD0A3", :style => "height:110px;"), 
+        root_path %>
+      </div>
+      <div class="col-md-9 col-md-offset-2">
+        <nav class="navigation">
+          <ul id="nav">
+            <li>
+              <h5><%= link_to "Regresar a D0A3", "http://deceroatres.org",
+              :class => "header_link" %></h5>
+            </li>
+          </ul>
+        </nav>
+      </div>
+    </div><!-- End Logo -->
+  </div><!-- End Container -->
+</header><!-- <<< End Header >>> -->
+<div class="col-md-12">
+  <hr>
+</div>
+<script type="text/javascript">
+  $(document).ready(function() {
+    $(".ddm-a").click(function() {
+      var id = @user.id
+      console.log("entramos");
+      $.get("/users/" + id).show();
+    })
+  });
+</script>

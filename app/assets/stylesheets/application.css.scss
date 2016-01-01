@@ -1,0 +1,244 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, vendor/assets/stylesheets,
+ * or any plugin's vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any styles
+ * defined in the other CSS/SCSS files in this directory. It is generally better to create a new
+ * file per style scope.
+ *
+ *= require_tree .
+ *= require_self
+ */
+
+ @import "bootstrap-sprockets";
+ @import "bootstrap";
+
+/* Bacground image */
+
+body.wood {
+  background:url(/assets/wood.jpg) repeat;
+}
+
+/* Variables */
+
+$purple: #8e4698;
+
+.alert {
+  margin-top: 10px;
+}
+
+/* wrap */ 
+
+.container {
+  width: 100%;
+}
+
+#wrap.boxed {
+  /*width:990px;*/
+  width: 80%;
+  min-height: 600px;
+  margin:25px auto;
+  background:#fff;
+  -webkit-box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0);
+  box-shadow:  0px 0px 6px 0px rgba(0, 0, 0, 0);
+}
+
+/* Navigational Menu navigation 
+=========================================================*/
+.navigation ul {
+  z-index:100;
+  margin: 0;
+  padding: 0;
+  list-style-type: none;
+}
+
+/*Top level list items*/
+
+.navigation ul li {
+  position: relative;
+  display: inline;
+  float: right;
+  margin-left:4px;
+}
+
+/*Top level menu link items style*/
+
+.navigation ul li a {
+  display: block;
+  padding: 37px 15px 34px 15px;
+  color: #505050;
+}
+
+/* Header */
+
+span#hline {
+  display: block;
+  position: relative;
+  width: 100%;
+  background-color: #585858;
+  height: 5px;
+  z-index: 100 !important;
+  margin: 7px 0 -11px 0;
+}
+
+.imgD0A3 {
+  margin-top: 10px;
+}
+
+#nav {
+  margin-top: 10px;
+}
+
+a.header_link:hover {
+  text-decoration: none;
+  height: 83px;
+  background-color: #FBFBFB;
+  border-bottom: 3.5px solid #82519f;
+  margin-top: 0; // remove the gap so it doesn't close
+}
+
+.dropdown {
+  margin: 0 auto;
+}
+
+.dropdown:hover .dropdown-menu {
+  display: block;
+  margin-top: 0; // remove the gap so it doesn't close
+ }
+
+.dropdown-menu {
+  border-top: 3.5px solid #82519f;
+  background-color: #FBFBFB;
+  left: -91px !important;
+  border-radius: 0px;
+}
+.dropdown-menu ul {
+  box-shadow: rgba(0, 0, 0, 0);
+  border-radius: 0px;
+  width: auto;
+}
+
+.dropdown-menu li {
+  padding: 10px !important;
+}
+
+.li-dropdown {
+  float: left !important;
+  margin-left: 0px;
+  padding-bottom: 0px !important;
+}
+
+.li-dropdown a {
+  float: left !important;
+  padding: 0px !important;
+}
+
+.a-ddm {
+  border-bottom: solid 1px #D1D2D4;
+  float: left;
+  height: 37px;
+  width: 162px;
+  padding-right: 100px !important;
+  padding-left: 0px !important;
+}
+
+.a-ddm:hover {
+  color:#7b3486;
+}
+
+.h5-ddm {
+  margin-top: 1px !important;
+}
+
+.ddm.relative {
+  right: 30px;
+  box-shadow: none;
+  margin: 0 auto;
+  border-radius: 0px;
+}
+
+.divider {
+  padding: 0px !important;
+  margin-bottom: 0px !important;
+  margin-top: 1px !important;
+}
+
+/* Footer */
+
+.tables-column .footer h3 span, .ei-title h2 {
+  font-size:20px;
+}
+
+footer, header, nav {
+  display: block;
+}
+
+footer {
+  background:#474747;
+  margin-top: 10%;
+  color:#a4a1a1;
+  // position: absolute;
+}
+
+footer.under-construction {
+  background:#fff;
+}
+
+a, .footer h3 span {
+  -webkit-transition: all 0.3s ease-in;
+  -moz-transition: all 0.3s ease-in;
+  -ms-transition: all 0.3s ease-in;
+  -o-transition: all 0.3s ease-in;
+  transition: all 0.3s ease-in;
+}
+
+.sm {
+  margin-right: 8px;
+}
+
+hr {
+  border-color: #ececec;
+  margin-top: 9px;
+  z-index: 1;
+}
+
+span.line {
+  display:block;
+  position: relative;
+  width:60px;
+  background-color: #81519c;
+  height:4px;
+  z-index: 100 !important;
+  margin: 7px 0 -11px 0;
+}
+
+/* Purple btn */
+
+.btn-primary {
+  background-color: #8e4698;
+  border-color: #8e4698;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-primary:focus {
+  background-color: #8e4698;
+  border-color: #8e4698;
+  font-family: 'TitilliumText22LBold';
+  outline: 0;
+}
+
+.btn-primary:active {
+  background-color: #8e4698;
+  border-color: #8e4698;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-primary:hover {
+  background-color: #793284;
+  border-color: #793284;
+  font-family: 'TitilliumText22LBold';
+}
