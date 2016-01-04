@@ -1,8 +1,8 @@
-<% provide(:title, "#{@post.title}") %>
+<% provide(:title, "#{@post.title.gsub("-"," ")}") %>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
-      <%= link_to "Volver a los artículo", posts_path, 
+      <%= link_to "Volver a los artículos", posts_path, 
       class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" %>
       <%= link_to "Editar", edit_post_path(@post), 
       class: "btn btn-warning pull-right edit-btn-margin-left top_buttons" %>
