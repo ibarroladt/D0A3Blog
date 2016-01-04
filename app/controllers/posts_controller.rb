@@ -6,11 +6,11 @@ class PostsController < ApplicationController
   end
 
   def show
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def edit
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
   end
 
   def new
@@ -28,7 +28,7 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
+    @post = Post.friendly.find(params[:id])
     if @post.update_attributes(post_params)
       flash[:success] = "Actualización exitosa"
       redirect_to @post
@@ -38,7 +38,7 @@ class PostsController < ApplicationController
   end
 
   def destroy
-    Post.find(params[:id]).destroy
+    Post.friendly.find(params[:id]).destroy
     flash[:success] = "Artículo borrado"
     redirect_to posts_path
   end  
