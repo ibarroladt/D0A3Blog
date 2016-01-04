@@ -1,0 +1,14 @@
+es-MX:
+  activerecord:
+    attributes:
+      post:
+        title:   El nombre
+        summary: El resumen
+        photo:   La foto
+        content: El contenido
+        publish: Publicado
+      task:
+        order_num: Número de tarea
+        title:     Título
+        summary:   Descripción
+        due_date:  Fecha de entrega

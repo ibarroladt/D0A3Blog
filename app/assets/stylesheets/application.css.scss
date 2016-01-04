@@ -25,7 +25,10 @@ body.wood {
 
 /* Variables */
 
-$purple: #8e4698;
+$purple:      #8e4698;
+$dark-purple: #793284;
+$green:       #4db848;
+$dark-green:  #2b9326;
 
 .alert {
   margin-top: 10px;
@@ -224,29 +227,78 @@ span.line {
   margin: 7px 0 -11px 0;
 }
 
+/* Buttons */
+
+.edit-btn-margin-left {
+  margin-left: 10px;
+}
+
 /* Purple btn */
 
 .btn-primary {
-  background-color: #8e4698;
-  border-color: #8e4698;
+  background-color: $purple;
+  border-color: $purple;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-primary:focus {
-  background-color: #8e4698;
-  border-color: #8e4698;
+  background-color: $purple;
+  border-color: $purple;
   font-family: 'TitilliumText22LBold';
   outline: 0;
 }
 
 .btn-primary:active {
-  background-color: #8e4698;
-  border-color: #8e4698;
+  background-color: $purple;
+  border-color: $purple;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-primary:hover {
-  background-color: #793284;
-  border-color: #793284;
+  background-color: $dark-purple;
+  border-color: $dark-purple;
   font-family: 'TitilliumText22LBold';
+}
+
+/* Green btn */
+
+.btn-warning {
+  background-color: $green;
+  border-color: $green;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-warning:focus {
+  background-color: $green;
+  border-color: $green;
+  outline: 0;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-warning:active {
+  background-color: $green;
+  border-color: $green;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-warning:hover {
+  background-color: $dark-green;
+  border-color: $dark-green;
+  font-family: 'TitilliumText22LBold';
+}
+
+.top_buttons {
+  margin-top: 30px;
+}
+
+
+/* FORMS */
+
+.register_form {
+  background-color: white;
+  opacity: 0.8;
+  padding: 20px;
+  border-radius: 10px;
+  width: 70%;
+  margin: 0 auto;
 }

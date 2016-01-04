@@ -9,6 +9,9 @@
         <nav class="navigation">
           <ul id="nav">
             <li>
+              <h5><%= link_to "Artículos", posts_path, :class => "header_link" %></h5>
+            </li>
+            <li>
               <h5><%= link_to "Regresar a D0A3", "http://deceroatres.org",
               :class => "header_link" %></h5>
             </li>
@@ -21,12 +24,3 @@
 <div class="col-md-12">
   <hr>
 </div>
-<script type="text/javascript">
-  $(document).ready(function() {
-    $(".ddm-a").click(function() {
-      var id = @user.id
-      console.log("entramos");
-      $.get("/users/" + id).show();
-    })
-  });
-</script>
