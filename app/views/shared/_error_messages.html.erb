@@ -1,0 +1,14 @@
+<% if @post %>
+  <% if @post.errors.any? %>
+    <div id="error_explanation">
+      <div class="alert alert-danger">
+        El formulario contiene <%= pluralize(@post.errors.count, "error", "errores") %>.
+      <ul class="errors" margin-bottom="0px">
+      <% @post.errors.full_messages.each do |msg| %>
+        <li style="color:#bb5242"><%= msg %></li>
+      <% end %>
+      </ul>
+      </div>
+    </div>
+  <% end %>
+<% end %>

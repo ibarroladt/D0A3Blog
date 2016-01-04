@@ -1,6 +1,6 @@
-<%# TODO meter los errores %>
 <div class="register_form">
   <%= simple_form_for @post do |f| %>
+  <%= render 'shared/error_messages' %>
   <%= f.input :title,   label: "Título",    class: "form-control" %>
   <%= f.input :summary, label: "Resumen", as: :text, :input_html => { :rows => 20 },
                                             class: "form-control" %>
