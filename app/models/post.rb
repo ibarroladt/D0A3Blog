@@ -3,6 +3,9 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :summary, :photo, :content
   before_save :titleize_title, :hyphen_title, :capitalize_summary, :capitalize_content
 
+  extend FriendlyId
+  friendly_id :title
+  
   # TODO falta meter detalles de la foto
 
   private
