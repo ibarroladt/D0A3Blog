@@ -1,3 +1,11 @@
 <% provide(:title, "Editar #{@post.title}") %>
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Editar artículo</h1>
+      <span class="line"></span>
+      <hr>
+      <%= render 'posts/form' %>
+    </div>
+  </div>
+</div>
