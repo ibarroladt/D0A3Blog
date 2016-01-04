@@ -2,6 +2,8 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <%= link_to "Crear artículo", new_post_path, 
+      class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" %>
       <% if @posts.empty? %>
         <h1>No hay artículos en este momento</h1>
         <span class="line"></span>
