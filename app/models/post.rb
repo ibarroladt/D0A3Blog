@@ -6,6 +6,9 @@ class Post < ActiveRecord::Base
   extend FriendlyId
   friendly_id :title
   
+  # For pictures
+  mount_uploader :photo, AvatarUploader
+
   # TODO falta meter detalles de la foto
 
   private

@@ -1,9 +1,9 @@
 <div class="register_form">
   <%= simple_form_for @post do |f| %>
   <%= render 'shared/error_messages' %>
-  <%= f.input :title,   label: "Título",         class: "form-control" %>
   <%# TODO falta meter logica de la foto %>
   <%= f.input :photo,   label: "Foto",           class: "form-control" %>
+  <%= f.input :title,   label: "Título",         class: "form-control" %>
   <%= f.input :summary, label: "Resumen", as: :text, :input_html => { :rows => 4 },
                                                  class: "form-control" %>
   <%= f.input :content,   label: "Contenido", as: :text, :input_html => { :rows => 10 },

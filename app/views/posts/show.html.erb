@@ -9,9 +9,9 @@
       <h1><%= @post.title.gsub("-"," ") %></h1>
       <span class="line"></span>
       <hr>
-      <div class="col-md-10">
-      <h1>aqui iría la foto, <%= @post.photo %></h1>
+      <div class="col-md-10 col-md-offset-1">
       <center>
+      <%= image_tag(@post.photo_url, class: "img_show") %>
       <h4><i><%= @post.summary %></i></h4>
       </center>
       <p><%= @post.content %></p>

@@ -30,6 +30,11 @@ gem 'simple_form'
 
 # for readable urls
 gem 'friendly_id'
+
+# gem to add images
+gem 'carrierwave'
+gem "rmagick"
+
 # Use Unicorn as the app server
 # gem 'unicorn'
 
