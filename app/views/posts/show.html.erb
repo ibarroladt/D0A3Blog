@@ -2,9 +2,20 @@
 <div class="container">
   <div class="row">
     <div class="col-md-12">
+      <%= link_to "Volver a los artículo", posts_path, 
+      class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" %>
+      <%= link_to "Editar", edit_post_path(@post), 
+      class: "btn btn-warning pull-right edit-btn-margin-left top_buttons" %>
       <h1><%= @post.title %></h1>
       <span class="line"></span>
       <hr>
+      <div class="col-md-10">
+      <h1>aqui iría la foto, <%= @post.photo %></h1>
+      <center>
+      <h4><i><%= @post.summary %></i></h4>
+      </center>
+      <p><%= @post.content %></p>
+      </div>
     </div>
   </div>
 </div>
