@@ -12,6 +12,11 @@
         <h1>Artículos</h1>
         <span class="line"></span>
         <hr>
+        <% @posts.each do |post| %>
+        <%= image_tag(post.avatar_url, class: "img_show") %><br>
+        <h3><%= link_to "#{post.title.gsub("-"," ")}", post_path(post) %></h3>
+        <h4><%= post.summary %></h4>
+        <% end %>
       <% end %>
     </div>
   </div>

@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   #/posts
   def index
-    @posts = Post.all
+    @posts = Post.all.where(publish: true)
   end
 
   def show
@@ -46,7 +46,7 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :summary, :content, :photo, :publish)
+      params.require(:post).permit(:title, :summary, :content, :avatar, :publish)
     end
 
 

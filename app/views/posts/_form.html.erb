@@ -2,13 +2,13 @@
   <%= simple_form_for @post do |f| %>
   <%= render 'shared/error_messages' %>
   <%# TODO falta meter logica de la foto %>
-  <%= f.input :photo,   label: "Foto",           class: "form-control" %>
-  <%= f.input :title,   label: "Título",         class: "form-control" %>
+  <%= f.input :avatar,   label: "Foto",           class: "form-control" %>
+  <%= f.input :title,   label: "Título",          class: "form-control" %>
   <%= f.input :summary, label: "Resumen", as: :text, :input_html => { :rows => 4 },
-                                                 class: "form-control" %>
+                                                  class: "form-control" %>
   <%= f.input :content,   label: "Contenido", as: :text, :input_html => { :rows => 10 },
-                                                 class: "form-control" %>
-  <%= f.input :publish,   label: "Publicado",    class: "form-control" %>
+                                                  class: "form-control" %>
+  <%= f.input :publish,   label: "Publicado",     class: "form-control" %>
   <% if params[:action] == 'new' %>
   <%= f.submit "Crear artículo",  class: "btn btn-block btn-primary" %>
   <% else %>
