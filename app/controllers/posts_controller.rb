@@ -2,7 +2,7 @@ class PostsController < ApplicationController
 
   #/posts
   def index
-    @posts = Post.all
+    @posts = Post.all.where(publish: true)
   end
 
   def show
@@ -41,12 +41,16 @@ class PostsController < ApplicationController
     Post.friendly.find(params[:id]).destroy
     flash[:success] = "Artículo borrado"
     redirect_to posts_path
-  end  
+  end
+
+  def unpublished
+    @posts = Post.all.where(publish: false)
+  end
 
   private
 
     def post_params
-      params.require(:post).permit(:title, :summary, :content, :photo, :publish)
+      params.require(:post).permit(:title, :summary, :content, :avatar, :publish)
     end
 
 
