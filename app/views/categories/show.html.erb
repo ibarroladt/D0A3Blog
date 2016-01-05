@@ -1,13 +1,14 @@
-<% provide(:title, "Nueva categoría") %>
+<% provide(:title, "#{@category.name.gsub("-"," ")}") %>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
       <%= link_to "Volver a los posts", posts_path, 
       class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" %>
-      <h1>Nueva categoría</h1>
+      <%= link_to "Editar", edit_category_path(@category), 
+      class: "btn btn-warning pull-right edit-btn-margin-left top_buttons" %>
+      <h1><%= @category.name.gsub("-"," ") %></h1>
       <span class="line"></span>
       <hr>
-      <%= render 'categories/form' %>
     </div>
   </div>
 </div>
