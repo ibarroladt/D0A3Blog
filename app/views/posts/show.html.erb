@@ -9,6 +9,9 @@
       <h1><%= @post.title.gsub("-"," ") %></h1>
       <span class="line"></span>
       <hr>
+      <% if !@post.publish %>
+        <h1>ESTE POST NO ESTA PUBLICADO</h1>
+      <% end %>
       <div class="col-md-10 col-md-offset-1">
       <center>
       <%= image_tag(@post.avatar_url, class: "img_show") %>
