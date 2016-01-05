@@ -9,8 +9,6 @@ class Post < ActiveRecord::Base
   # For pictures
   mount_uploader :avatar, AvatarUploader
 
-  # TODO falta meter detalles de la foto
-
   private
 
     def titleize_title

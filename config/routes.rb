@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  get "/posts/unpublished", :to => "posts#unpublished", :as => 'unpublished'
   resources :posts
   root 'static_pages#home'
 

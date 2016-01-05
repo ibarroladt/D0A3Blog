@@ -41,7 +41,11 @@ class PostsController < ApplicationController
     Post.friendly.find(params[:id]).destroy
     flash[:success] = "Artículo borrado"
     redirect_to posts_path
-  end  
+  end
+
+  def unpublished
+    @posts = Post.all.where(publish: false)
+  end
 
   private
 
