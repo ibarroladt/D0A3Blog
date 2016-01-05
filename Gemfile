@@ -44,6 +44,8 @@ gem "rmagick"
 group :production do
   gem 'rails_12factor'
   gem 'puma'
+  gem 'fog'
+  gem 'unf'
 end
 
 group :development, :test do
