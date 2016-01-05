@@ -11,23 +11,23 @@
     </div>
   </center>
   <% end %>
-  <%= f.input :title,   label: "Título",          class: "form-control" %>
+  <%= f.input :title,   label: "Título",      class: "form-control" %>
   <%= f.input :summary, label: "Resumen", as: :text, :input_html => { :rows => 4 },
-                                                  class: "form-control" %>
+                                              class: "form-control" %>
   <%= f.input :content,   label: "Contenido", as: :text, :input_html => { :rows => 10 },
-                                                  class: "form-control" %>
-  <%= f.input :publish,   label: "Publicado",     class: "form-control" %>
+                                              class: "form-control" %>
+  <%= f.input :publish,   label: "Publicado", class: "form-control" %>
   <% if params[:action] == 'new' %>
   <%= f.submit "Crear post",      class: "btn btn-block btn-primary" %>
   <% else %>
   <%= f.submit "Guardar cambios", class: "btn btn-block btn-primary" %>
   <%= link_to "Borrar post", @post, method: :delete, 
   data: { confirm: "¿Estás seguro de borrar el post '#{@post.title}'?" },
-      class: "btn btn-danger btn-block" %>
+                                  class: "btn btn-danger btn-block" %>
   <% end %>
   <%= link_to "Markdown Cheatsheet", 
   "https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet", 
-  :target => "_blank",             class: "btn btn-info btn-block" %>
+  :target => "_blank",            class: "btn btn-info btn-block" %>
   <% end %>
 </div>
 
