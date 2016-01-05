@@ -31,6 +31,9 @@ gem 'simple_form'
 # for readable urls
 gem 'friendly_id'
 
+# markdown
+gem 'redcarpet'
+
 # gem to add images
 gem 'carrierwave'
 gem "rmagick"
