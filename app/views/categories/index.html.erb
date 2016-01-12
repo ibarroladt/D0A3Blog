@@ -7,9 +7,7 @@
       <h1>Estas son las categorías que hay</h1>
       <span class="line"></span>
       <hr>
-      <% @categories.each do  |c| %>
-      <h3><%= c.name %></h3>
-      <% end %>
+      <%= btn_color(@categories).html_safe %>
     </div>
   </div>
 </div>
