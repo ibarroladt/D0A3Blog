@@ -237,26 +237,30 @@ span.line {
 
 .btn-primary {
   background-color: $purple;
-  border-color: $purple;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-primary:focus {
   background-color: $purple;
-  border-color: $purple;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
   outline: 0;
 }
 
 .btn-primary:active {
   background-color: $purple;
-  border-color: $purple;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-primary:hover {
   background-color: $dark-purple;
-  border-color: $dark-purple;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
 }
 
@@ -264,26 +268,30 @@ span.line {
 
 .btn-warning {
   background-color: $green;
-  border-color: $green;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-warning:focus {
   background-color: $green;
-  border-color: $green;
+  border-color: none;
+  border-style: none;
   outline: 0;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-warning:active {
   background-color: $green;
-  border-color: $green;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
 }
 
 .btn-warning:hover {
   background-color: $dark-green;
-  border-color: $dark-green;
+  border-color: none;
+  border-style: none;
   font-family: 'TitilliumText22LBold';
 }
 
