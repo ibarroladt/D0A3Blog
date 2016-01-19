@@ -15,6 +15,9 @@
       <% end %>
       <% @posts.each do  |post| %>
         <%= image_tag(post.avatar_url, class: "img_show") %><br>
+        <% post.tags.each do |tag| %>
+        <span class="label label-primary"><%= tag.name %></span>
+        <% end %>
         <h3><%= link_to "#{post.unhyphen_title}", post_path(post) %></h3>
         <h4><%= markdown(post.summary) %></h4>
       <% end %>

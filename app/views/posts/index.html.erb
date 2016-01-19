@@ -6,6 +6,8 @@
       class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" %>
       <%= link_to "Ver posts sin publicar post", unpublished_path, 
       class: "btn btn-warning pull-right edit-btn-margin-left top_buttons" %>
+      <%= link_to "Ver Hashtags", tags_path, 
+      class: "btn btn-default pull-right edit-btn-margin-left top_buttons" %>
       <% if @posts.empty? %>
         <h1>No hay posts en este momento</h1>
         <span class="line"></span>
@@ -16,6 +18,9 @@
         <hr>
         <% @posts.each do |post| %>
         <%= image_tag(post.avatar_url, class: "img_show") %><br>
+        <% post.tags.each do |tag| %>
+        <span class="label label-info"><%= tag.name %></span>
+        <% end %>
         <h3><%= link_to "#{post.unhyphen_title}", post_path(post) %></h3>
         <h4><%= markdown(post.summary) %></h4>
         <% end %>

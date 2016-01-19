@@ -29,6 +29,8 @@ $purple:      #8e4698;
 $dark-purple: #793284;
 $green:       #4db848;
 $dark-green:  #2b9326;
+$gray:        #d1d2d4;
+$dark-gray:   #a4a6a8;
 
 .alert {
   margin-top: 10px;
@@ -290,6 +292,36 @@ span.line {
 
 .btn-warning:hover {
   background-color: $dark-green;
+  border-color: none;
+  border-style: none;
+  font-family: 'TitilliumText22LBold';
+}
+
+/* Gray btn */
+
+.btn-default {
+  background-color: $gray;
+  border-color: none;
+  border-style: none;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-default:active {
+  background-color: $gray;
+  border-color: none;
+  border-style: none;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-default:focus {
+  background-color: $gray;
+  border-color: none;
+  border-style: none;
+  font-family: 'TitilliumText22LBold';
+}
+
+.btn-default:hover {
+  background-color: $dark-gray;
   border-color: none;
   border-style: none;
   font-family: 'TitilliumText22LBold';

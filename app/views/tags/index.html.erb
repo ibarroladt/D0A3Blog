@@ -1,0 +1,29 @@
+<div class="bg-slider-wrapper">
+<div class="flexslider bg-slider">
+    </div>
+</div><!--//bg-slider-wrapper-->   
+
+<div class="sections-wrapper index_contacts">  
+<!-- ******Contact Section****** --> 
+<section class="contact-section section section-on-bg">
+    <div class="container">
+
+        <%= link_to "Regresar a los posts", posts_path, class: "btn btn-primary pull-right top_buttons" %> 
+        <br> 
+        <h1>Tags</h1>
+        <span class="line"></span>
+        <hr>
+        <div id="tag_cloud" class="row">
+          <div class="col-md-10 col-sm-10 col-xs-10" id="tags_div">              
+              <% @tags.each do |tag| %>
+                  <button class="btn btn-sm btn-default btn_tags">
+                    <%= "#{tag.name} (#{tag.taggings_count}) " %>
+                      <%= link_to "X", tag_path(tag), method: :delete,
+                      data: { confirm: "¿Estás seguro de borrar '#{tag.name}'?" }, :class => "delete_tag" %>
+                  </button>    
+              <% end %>
+          </div>
+ 
+    </div><!--//container-->
+</section><!--//contact-section-->
+</div>
