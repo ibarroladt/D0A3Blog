@@ -4,7 +4,8 @@ class Post < ActiveRecord::Base
   before_save :titleize_title, :hyphen_title
   
   acts_as_taggable # Alias for acts_as_taggable_on :tags
-
+  acts_as_taggable_on :categories
+  
   # Readable url
   extend FriendlyId
   friendly_id :title
