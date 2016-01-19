@@ -31,6 +31,8 @@ gem 'simple_form'
 # for readable urls
 gem 'friendly_id'
 
+gem 'acts-as-taggable-on'
+
 # markdown
 gem 'redcarpet'
 

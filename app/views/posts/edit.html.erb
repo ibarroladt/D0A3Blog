@@ -1,4 +1,4 @@
-<% provide(:title, "Editar #{@post.title.gsub("-"," ")}") %>
+<% provide(:title, "Editar #{@post.unhyphen_title}") %>
 <div class="container">
   <div class="row">
     <div class="col-md-12">
@@ -7,7 +7,27 @@
       <h1>Editar post</h1>
       <span class="line"></span>
       <hr>
-      <%= render 'posts/form' %>
+<div id="tag_cloud">
+      <div class="col-md-10 col-sm-10 col-xs-10" id="tags_div">
+        <% Post.tag_counts.each do |tag| %>
+        <% if @post.tags.include?(tag) %>
+        <button class="btn btn-sm btn-primary btn_tags"><%= tag.name %></button>
+        <% else %>
+        <button class="btn btn-sm btn-default btn_tags"><%= tag.name %></button>
+        <% end %>
+        <% end %>
+      </div>
+      <div class="col-md-2 col-sm-2 col-xs-2">
+        <h6>Añadir tags</h6>
+        <div class="form-group">
+          <div class="input-group">
+            <input type="text" id="new_post_tag" class="form-control">
+            <div class="input-group-addon" id="add_post_tag">+</div>
+          </div>
+        </div>
+      </div>
+    </div>
+          <%= render 'posts/form' %>
     </div>
   </div>
 </div>

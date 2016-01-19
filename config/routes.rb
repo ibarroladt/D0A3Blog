@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :posts
   resources :categories
+  resources :posts_in_categories
   
 end

@@ -1,0 +1,13 @@
+<% if !@post.publish %>
+<h1>ESTE POST NO ESTA PUBLICADO</h1>
+<% end %>
+<div class="col-md-10 col-md-offset-1">
+  <% @post.tags.each do |tag| %>
+  <span class="label label-primary"><%= tag.name %></span>
+  <% end %>
+  <center>
+    <%= image_tag(@post.avatar_url, class: "img_show") %>
+    <h4><i><%= markdown(@post.summary) %></i></h4>
+  </center>
+  <p><%= markdown(@post.content) %></p>
+</div>

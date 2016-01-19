@@ -16,7 +16,7 @@
         <hr>
         <% @posts.each do |post| %>
         <%= image_tag(post.avatar_url, class: "img_show") %><br>
-        <h3><%= link_to "#{post.title.gsub("-"," ")}", post_path(post) %></h3>
+        <h3><%= link_to "#{post.unhyphen_title}", post_path(post) %></h3>
         <h4><%= markdown(post.summary) %></h4>
         <% end %>
       <% end %>

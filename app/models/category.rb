@@ -12,12 +12,18 @@ class Category < ActiveRecord::Base
   extend FriendlyId
   friendly_id :name
 
-  def titleize_name
-    self.send("#{:name}=", self.send(:name).titleize) if self.send(:name)
+  def unhyphen_name
+    self.name.gsub("-"," ")
   end
 
-  def hyphen_name
-    self.send("#{:name}=", self.send(:name).gsub(" ","-")) if self.send(:name)
-  end
+  private
+
+    def titleize_name
+      self.send("#{:name}=", self.send(:name).titleize) if self.send(:name)
+    end
+
+    def hyphen_name
+      self.send("#{:name}=", self.send(:name).gsub(" ","-")) if self.send(:name)
+    end
 
 end

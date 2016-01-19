@@ -21,7 +21,7 @@ class PostsController < ApplicationController
     @post = Post.new(post_params)
     if @post.save
       flash[:success] = "Artículo creado exitósamente"
-      redirect_to @post
+      redirect_to posts_path
     else
       render 'new'
     end
@@ -30,6 +30,9 @@ class PostsController < ApplicationController
   def update
     @post = Post.friendly.find(params[:id])
     if @post.update_attributes(post_params)
+      # @tag = "R_#{current_user.name}"
+      @post.tag_list.add(@tag)
+      @post.save
       flash[:success] = "Actualización exitosa"
       redirect_to @post
     else
@@ -50,7 +53,8 @@ class PostsController < ApplicationController
   private
 
     def post_params
-      params.require(:post).permit(:title, :summary, :content, :avatar, :publish)
+      params.require(:post).permit(:title, :summary, :content, :avatar, :publish, 
+        :tag_list)
     end
 
 end
