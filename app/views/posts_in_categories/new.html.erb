@@ -1,0 +1,26 @@
+<% provide(:title, "Relacionar categorías") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <h1>Relacionar categorías post</h1>
+      <span class="line"></span>
+      <hr>
+      <div id="tags_div">
+      </div>
+      <div class="col-md-6">
+        <h3>Categorías principales</h3>
+        <% @p_categories.each do  |pcat| %>
+        <%= pcat.name %><br>
+        <% end %>
+      </div>
+      <div class="col-md-6">
+        <% if !@n_categories.empty? %>
+        <h3>Categorías normales</h3>
+        <% @n_categories.each do  |ncat| %>
+        <%= ncat.name %><br>
+        <% end %>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>

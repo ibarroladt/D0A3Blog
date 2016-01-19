@@ -299,6 +299,10 @@ span.line {
   margin-top: 30px;
 }
 
+/* Labels */
+.label-primary {
+  background-color: $purple;  
+}
 
 /* FORMS */
 
@@ -309,4 +313,8 @@ span.line {
   border-radius: 10px;
   width: 70%;
   margin: 0 auto;
+}
+
+#add_post_tag {
+  cursor: pointer;
 }

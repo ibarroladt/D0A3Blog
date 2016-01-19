@@ -2,6 +2,8 @@ class Post < ActiveRecord::Base
 
   validates_presence_of :title, :summary, :avatar, :content
   before_save :titleize_title, :hyphen_title
+  
+  acts_as_taggable # Alias for acts_as_taggable_on :tags
 
   # Readable url
   extend FriendlyId
@@ -13,6 +15,10 @@ class Post < ActiveRecord::Base
   # Relations
   has_many :posts_in_categories
   has_many :categories, through: :posts_in_categories
+
+  def unhyphen_title
+    self.title.gsub("-"," ")
+  end
 
   private
 

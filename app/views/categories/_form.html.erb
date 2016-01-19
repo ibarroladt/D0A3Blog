@@ -1,6 +1,6 @@
 <div class="register_form">
   <%= simple_form_for @category do |f| %>
-  <%= render 'shared/error_messages' %>
+  <%= render 'shared/error_messages', object: f.object %>
   <%= f.input :name,   label: "Nombre",      class: "form-control" %>
   <h5>Selecciona si es una categoría importante</h5>
   <%= f.input :core,   label: "Principal", class: "form-control" %>
@@ -9,7 +9,7 @@
   <% else %>
   <%= f.submit "Guardar cambios", class: "btn btn-block btn-primary" %>
   <%= link_to "Borrar categoría", @category, method: :delete, 
-  data: { confirm: "¿Estás seguro de borrar la categoría '#{@category.name}'?" },
+  data: { confirm: "¿Estás seguro de borrar la categoría '#{@category.unhyphen_name}'?" },
                                   class: "btn btn-danger btn-block" %>
   <% end %>
   <% end %>
