@@ -7,6 +7,7 @@
       <h1>Editar post</h1>
       <span class="line"></span>
       <hr>
+      <h3>Hashtags</h3>
       <div id="tag_cloud">
         <div class="col-md-10" id="tags_div">
           <% Post.tag_counts.each do |tag| %>
@@ -18,7 +19,7 @@
           <% end %>
         </div>
         <center>
-        <h5>Añadir etiquetas</h5>
+          <h5>Añadir etiquetas</h5>
         </center>
         <div class="col-md-2">
           <div class="form-group">
@@ -28,7 +29,30 @@
             </div>
           </div>
         </div>
-      </div>
+      </div><br>
+      <h3>Categorías</h3>
+      <div id="tag_cloud">
+        <div class="col-md-10" id="tags_div">
+          <% Post.tag_counts.each do |tag| %>
+          <% if @post.tags.include?(tag) %>
+          <button class="btn btn-sm btn-primary btn_tags"><%= tag.name %></button>
+          <% else %>
+          <button class="btn btn-sm btn-default btn_tags"><%= tag.name %></button>
+          <% end %>
+          <% end %>
+        </div>
+        <center>
+          <h5>Añadir etiquetas</h5>
+        </center>
+        <div class="col-md-2">
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" id="new_post_tag" class="form-control">
+              <div class="input-group-addon" id="add_post_tag">+</div>
+            </div>
+          </div>
+        </div>
+      </div><br>
       <%= render 'posts/form' %>
     </div>
   </div>
