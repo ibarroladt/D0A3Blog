@@ -333,9 +333,12 @@ span.line {
 
 /* Labels */
 .label-primary {
-  background-color: $purple;  
+  background-color: $purple;
 }
 
+.label-warning {
+  background-color: $green;
+}
 /* FORMS */
 
 .register_form {
@@ -347,6 +350,6 @@ span.line {
   margin: 0 auto;
 }
 
-#add_post_tag {
+#add_post_tag, #add_post_category{
   cursor: pointer;
 }

@@ -7,27 +7,53 @@
       <h1>Editar post</h1>
       <span class="line"></span>
       <hr>
-<div id="tag_cloud">
-      <div class="col-md-10 col-sm-10 col-xs-10" id="tags_div">
-        <% Post.tag_counts.each do |tag| %>
-        <% if @post.tags.include?(tag) %>
-        <button class="btn btn-sm btn-primary btn_tags"><%= tag.name %></button>
-        <% else %>
-        <button class="btn btn-sm btn-default btn_tags"><%= tag.name %></button>
-        <% end %>
-        <% end %>
-      </div>
-      <div class="col-md-2 col-sm-2 col-xs-2">
-        <h6>Añadir tags</h6>
-        <div class="form-group">
-          <div class="input-group">
-            <input type="text" id="new_post_tag" class="form-control">
-            <div class="input-group-addon" id="add_post_tag">+</div>
+      <h3>Hashtags</h3>
+      <div id="tag_cloud">
+        <div class="col-md-10" id="tags_div">
+          <% Post.tag_counts.each do |tag| %>
+          <% if @post.tags.include?(tag) %>
+          <button class="btn btn-sm btn-primary btn_tags"><%= tag.name %></button>
+          <% else %>
+          <button class="btn btn-sm btn-default btn_tags"><%= tag.name %></button>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+        <center>
+          <h5>Añadir etiquetas</h5>
+        </center>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" id="new_post_tag" class="form-control">
+              <div class="input-group-addon" id="add_post_tag">+</div>
+            </div>
           </div>
         </div>
-      </div>
-    </div>
-          <%= render 'posts/form' %>
+      </div><br>
+      <h3>Categorías</h3>
+      <div id="category_cloud">
+        <div class="col-md-10" id="categories_div">
+          <% Post.category_counts.each do |cat| %>
+          <% if @post.categories.include?(cat) %>
+          <button class="btn btn-sm btn-warning btn_categories"><%= cat.name %></button>
+          <% else %>
+          <button class="btn btn-sm btn-default btn_categories"><%= cat.name %></button>
+          <% end %>
+          <% end %>
+        </div>
+        <div class="col-md-2">
+        <center>
+          <h5>Añadir categorías</h5>
+        </center>
+          <div class="form-group">
+            <div class="input-group">
+              <input type="text" id="new_post_category" class="form-control">
+              <div class="input-group-addon" id="add_post_category">+</div>
+            </div>
+          </div>
+        </div>
+      </div><br>
+      <%= render 'posts/form' %>
     </div>
   </div>
 </div>
