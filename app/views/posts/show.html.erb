@@ -15,6 +15,9 @@
       <div class="col-md-10 col-md-offset-1">
         <center>
         <%= image_tag(@post.avatar_url, class: "img_show") %><br>
+        <% @post.categories.each do |cat| %>
+        <h4><span class="label label-warning"><%= cat.name %></span></h4>
+        <% end %>
         <% @post.tags.each do |tag| %>
         <span class="label label-primary"><%= tag.name %></span>
         <% end %>

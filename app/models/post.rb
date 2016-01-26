@@ -14,8 +14,8 @@ class Post < ActiveRecord::Base
   mount_uploader :avatar, AvatarUploader
 
   # Relations
-  has_many :posts_in_categories
-  has_many :categories, through: :posts_in_categories
+  # has_many :posts_in_categories
+  # has_many :categories, through: :posts_in_categories
 
   def unhyphen_title
     self.title.gsub("-"," ")
