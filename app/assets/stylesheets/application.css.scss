@@ -26,7 +26,7 @@ body.wood {
 /* Variables */
 
 $purple:      #8e4698;
-$dark-purple: #793284;
+$dark-purple: #6a1d77;
 $green:       #4db848;
 $dark-green:  #2b9326;
 $gray:        #d1d2d4;
@@ -352,4 +352,9 @@ span.line {
 
 #add_post_tag, #add_post_category{
   cursor: pointer;
+}
+
+.post_link:hover{
+  text-decoration: none;
+  color: $dark-purple;
 }
