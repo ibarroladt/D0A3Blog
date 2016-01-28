@@ -5,5 +5,5 @@ Rails.application.routes.draw do
   resources :posts
   resources :categories
   resources :posts_in_categories
-  resources :tags, only: [:index, :destroy]
+  resources :tags, only: [:index, :show, :destroy]
 end
