@@ -18,10 +18,13 @@
         <hr>
         <% @posts.each do |post| %>
         <%= image_tag(post.avatar_url, class: "img_show") %><br>
-        <% post.tags.each do |tag| %>
-        <span class="label label-info"><%= tag.name %></span>
+        <% post.categories.each do |cat| %>
+        <span class="label label-primary"><%= cat.name %></span>
         <% end %>
-        <h3><%= link_to "#{post.unhyphen_title}", post_path(post) %></h3>
+        <% post.tags.each do |tag| %>
+        <span class="label label-warning"><%= tag.name %></span>
+        <% end %>
+        <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;'} %></h3>
         <h4><%= markdown(post.summary) %></h4>
         <% end %>
       <% end %>

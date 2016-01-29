@@ -1,4 +1,5 @@
 class Post < ActiveRecord::Base
+  include SharedMethods
 
   validates_presence_of :title, :summary, :avatar, :content
   before_save :titleize_title, :hyphen_title

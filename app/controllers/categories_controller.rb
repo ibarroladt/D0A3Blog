@@ -9,11 +9,22 @@ class CategoriesController < ApplicationController
   end
 
   def edit
-    @category = Category.friendly.find(params[:id])
+    begin
+      @category = Category.friendly.find(params[:id])
+    rescue
+      flash[:danger] = "Esa categoría no se puede editar"
+      redirect_to posts_path
+    end
   end
 
   def show
-    @category = Category.friendly.find(params[:id])
+    category = Category.friendly.find(params[:id])
+    @category = ActsAsTaggableOn::Tag.find_by_name(category.name)
+    if @category
+      @category
+    else
+      @category = Category.friendly.find(params[:id])
+    end
   end
 
   def create

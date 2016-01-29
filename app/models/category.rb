@@ -1,5 +1,5 @@
 class Category < ActiveRecord::Base
-
+ include SharedMethods
   # Validations
   validates_presence_of :name
   before_save :titleize_name, :hyphen_name

@@ -17,8 +17,8 @@
 $(document).on('ready page:load',function(){
 
   $(".btn_tags").click(function(){
+    $(this).toggleClass("btn-warning");
     $(this).toggleClass("btn-default");
-    $(this).toggleClass("btn-primary");
     $(this).blur();
     submitTags();
   });
@@ -34,7 +34,7 @@ $(document).on('ready page:load',function(){
   });
 
   $(".btn_categories").click(function(){
-    $(this).toggleClass("btn-warinng");
+    $(this).toggleClass("btn-primary");
     $(this).toggleClass("btn-default");
     $(this).blur();
     submitCategory();
@@ -61,7 +61,7 @@ $(document).on('ready page:load',function(){
 var submitTags = function(){
   var tags = []
   // Crea un array de las tags
-  $(".btn_tags.btn-primary").each(function(){
+  $(".btn_tags.btn-warning").each(function(){
     tags.push($(this).text());
   });
   var url = $("form").attr("action");
@@ -74,7 +74,7 @@ var submitTags = function(){
 
 var addTag = function(){
   var tag = $("#new_post_tag").val();
-  var btn = "<button class='btn btn-sm btn-primary btn_tags'>" + tag + "</button>";
+  var btn = "<button class='btn btn-sm btn-warning btn_tags'>" + tag + "</button>";
   $("#tags_div").append(btn);
   $("#new_post_tag").val("");
   submitTags();
@@ -83,7 +83,7 @@ var addTag = function(){
 var submitCategory = function(){
   var categories = []
   // Crea un array de las categorias
-  $(".btn_categories.btn-warning").each(function(){
+  $(".btn_categories.btn-primary").each(function(){
     categories.push($(this).text());
   });
   var url = $("form").attr("action");
@@ -96,7 +96,7 @@ var submitCategory = function(){
 
 var addCategory = function(){
   var cat = $("#new_post_category").val();
-  var btn = "<button class='btn btn-sm btn-warning btn_categories'>" + cat + "</button>";
+  var btn = "<button class='btn btn-sm btn-primary btn_categories'>" + cat + "</button>";
   $("#categories_div").append(btn);
   $("#new_post_category").val("");
   submitCategory();
