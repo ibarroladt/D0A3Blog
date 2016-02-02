@@ -1,6 +1,9 @@
 class CategoriesController < ApplicationController
 
   def index
+    if params[:tag]
+      @categories = Post.tagged_with(params[:tag])
+    end
     @categories = Category.all
   end
 
