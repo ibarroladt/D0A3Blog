@@ -7,7 +7,39 @@
       <h1>Estas son las categorías que hay</h1>
       <span class="line"></span>
       <hr>
-      <%= btn_color(@categories).html_safe %>
+      <%= btn_color(@p_categories).html_safe %>
+      <div id="tag_cloud" class="row">
+        <div class="col-md-10 col-sm-10 col-xs-10" id="tags_div">
+          <% if !params[:tag] %>
+          <h3>Categorías</h3>
+          <% @categories.each do |cat| %>
+            <%= link_to "#{cat.name} (#{cat.taggings_count})", tag_path(cat.name), class: "btn btn-sm btn-default contact_tag" %>
+          <% end %><br><br>
+          <h3>Hashtags</h3>
+          <% @tags.each do |tag| %>
+          <button class="btn btn-sm btn-default btn_tags">
+            <%= "#{tag.name} (#{tag.taggings_count}) " %>
+            <%# TODO falta ver que esto solo lo pueda ver un admin %>
+            <%= link_to "X", tag_path(tag), method: :delete,
+            data: { confirm: "¿Estás seguro de borrar '#{tag.name}'?" }, :class => "delete_tag" %>
+          </button>
+          <% end %>
+          <% else %>
+          <br>
+          <% @tags.each do |post| %>
+          <%= link_to image_tag(post.avatar_url, class: "img_show"), post_path(post) %><br>
+          <% post.categories.each do |cat| %>
+          <span class="label label-primary"><%= cat.name %></span>
+          <% end %>
+          <% post.tags.each do |tag| %>
+          <span class="label label-warning"><%= tag.name %></span>
+          <% end %>
+          <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %></h3>
+          <h4><%= markdown(post.summary) %></h4>
+          <% end %>
+          <% end %>
+        </div>
+      </div>
     </div>
   </div>
 </div>

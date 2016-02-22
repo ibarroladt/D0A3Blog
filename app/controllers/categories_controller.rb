@@ -1,7 +1,14 @@
 class CategoriesController < ApplicationController
 
   def index
-    @categories = Category.all
+    if params[:tag]
+      @tags         = Post.tagged_with(params[:tag])
+      @p_categories = Category.all
+    else
+      @tags         = Post.tag_counts
+      @categories   = Post.category_counts
+      @p_categories = Category.all
+    end
   end
 
   def new
@@ -18,10 +25,20 @@ class CategoriesController < ApplicationController
   end
 
   def show
-    category = Category.friendly.find(params[:id])
+    category  = Category.friendly.find(params[:id])
     @category = ActsAsTaggableOn::Tag.find_by_name(category.name)
+    puts "-" * 100
+    puts
+    puts "category es: #{@category.inspect}"
+    puts
+    puts "-" * 100
     if @category
-      @category
+    puts "-" * 100
+    puts
+    puts "ENTRAMOS"
+    puts
+    puts "-" * 100
+      redirect_to@category
     else
       @category = Category.friendly.find(params[:id])
     end

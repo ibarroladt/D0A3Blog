@@ -7,12 +7,27 @@
       <hr>
       <div id="tag_cloud" class="row">
         <div class="col-md-10 col-sm-10 col-xs-10" id="tags_div">
+          <h3>Categorías</h3>
+          <% @categories.each do |cat| %>
+<!--  -->
+          <button class="btn btn-sm btn-default btn_categories">
+            <%= link_to "#{cat.name} (#{cat.taggings_count})", tag_path(cat.name), class: "btn btn-sm btn-default contact_tag" %>
+            <%# TODO falta ver que esto solo lo pueda ver un admin %>
+            <%= link_to "X", tag_path(cat), method: :delete,
+            data: { confirm: "¿Estás seguro de borrar '#{cat.name}'?" }, :class => "delete_tag" %>
+          </button>
+<!--  -->
+          <% end %><br><br>
+          <h3>Hashtags</h3>
           <% @tags.each do |tag| %>
+<!--  -->
           <button class="btn btn-sm btn-default btn_tags">
-            <%= "#{tag.name} (#{tag.taggings_count}) " %>
+            <%= link_to "#{tag.name} (#{tag.taggings_count})", tag_path(tag.name), class: "btn btn-sm btn-default contact_tag" %>
+            <%# TODO falta ver que esto solo lo pueda ver un admin %>
             <%= link_to "X", tag_path(tag), method: :delete,
             data: { confirm: "¿Estás seguro de borrar '#{tag.name}'?" }, :class => "delete_tag" %>
           </button>
+<!--  -->
           <% end %>
         </div>
       </div>

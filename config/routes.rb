@@ -5,5 +5,7 @@ Rails.application.routes.draw do
   resources :posts
   resources :categories
   resources :posts_in_categories
-  resources :tags, only: [:index, :show, :destroy]
+  get 'tags/:tag', to: 'categories#index', as: :tag
+  resources :tags
+
 end

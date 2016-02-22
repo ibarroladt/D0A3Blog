@@ -11,7 +11,7 @@ module CategoriesHelper
       else
         color = "#686868"
       end
-      btns = btns + "<a style='background-color:#{color}' class='btn btn-primary edit-btn-margin-left' href='#{category_path(categories[i])}'>#{categories[i].name.gsub("-"," ")}</a>"
+      btns = btns + "<a style='background-color:#{color}' class='btn btn-primary edit-btn-margin-left' href='#{tag_path(categories[i].unhyphen_name)}'>#{categories[i].name.gsub("-"," ")}</a>"
     end
     btns
   end

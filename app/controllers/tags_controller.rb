@@ -3,7 +3,8 @@ class TagsController < ApplicationController
   # before_action :correct_user
 
   def index
-    @tags = ActsAsTaggableOn::Tag.all
+    @tags       = Post.tag_counts
+    @categories = Post.category_counts
   end
 
   def destroy
