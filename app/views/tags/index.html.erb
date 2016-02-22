@@ -7,7 +7,11 @@
       <hr>
       <div id="tag_cloud" class="row">
         <div class="col-md-10 col-sm-10 col-xs-10" id="tags_div">
+          <% if @categories.empty? %>
+          <h3>Todavía no hay categorías</h3>
+          <% else %>
           <h3>Categorías</h3>
+          <% end %>
           <% @categories.each do |cat| %>
 <!--  -->
           <button class="btn btn-sm btn-default btn_categories">
@@ -18,7 +22,11 @@
           </button>
 <!--  -->
           <% end %><br><br>
+          <% if @tags.emtpy? %>
+          <h3>Todavía no hay hashtags</h3>
+          <% else %>
           <h3>Hashtags</h3>
+          <% end %>
           <% @tags.each do |tag| %>
 <!--  -->
           <button class="btn btn-sm btn-default btn_tags">
