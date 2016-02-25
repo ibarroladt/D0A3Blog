@@ -1,13 +1,8 @@
 Rails.application.routes.draw do
 
-  get 'users/new'
-
-  get 'users/edit'
-
-  get 'users/show'
-
   get "/posts/unpublished", :to => "posts#unpublished", :as => 'unpublished'
   root 'static_pages#home'
+  resources :users
   resources :posts
   resources :categories
   resources :posts_in_categories
