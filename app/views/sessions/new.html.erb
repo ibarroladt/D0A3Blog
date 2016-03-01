@@ -1,0 +1,19 @@
+<% provide(:title, "Inicio de sesión") %>
+<div class="container">
+  <div class="row">
+    <div class="col-md-12">
+      <%= link_to "Volver al inicio", root_url, 
+      class: "btn btn-primary btn pull-right top_buttons" %>
+      <h2>Ingresa tus datos para entrar</h2>
+      <span class="line"></span>
+      <hr>
+      <%= simple_form_for :session, :url => login_path do |f| %>
+      <div class="register_form">
+        <%= f.input :email, class: "form-control" %>
+        <%= f.input :password, class: "form-control" %>
+        <%= f.submit "Iniciar sesión", class: "btn btn-warning btn-block" %><br>
+        <% end %>
+      </div>
+    </div>
+  </div>
+</div>
