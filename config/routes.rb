@@ -9,4 +9,8 @@ Rails.application.routes.draw do
   get 'tags/:tag', to: 'categories#index', as: :tag
   resources :tags
 
+  get    'new'     => 'sessions#new'
+  post   'login'   => 'sessions#create'
+  match '/logout', to: 'sessions#destroy',     via: 'delete'
+
 end
