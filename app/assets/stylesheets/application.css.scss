@@ -358,3 +358,24 @@ span.line {
   text-decoration: none;
   color: $dark-purple;
 }
+
+/* tables */
+
+.all_width {
+  position: relative;
+  // width: 100%;
+  float: left;
+  padding: 10px;
+  border-radius: 4px;
+  border: 1px solid #d7dfe6;
+}
+
+.blue_box {
+  position: relative;
+  float: left;
+  background: #e1e7ec;
+  width: 100%;
+  border-radius: 5px;
+  border: 1px solid #d6dce0;
+  padding: 10px;
+}
