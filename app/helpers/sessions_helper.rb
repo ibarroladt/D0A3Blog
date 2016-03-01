@@ -14,5 +14,12 @@ module SessionsHelper
   def signed_in?
     !current_user.nil?
   end
-  
+
+  def signed_in_user
+    unless signed_in?
+      flash[:danger] = "Inicie sesión"
+      redirect_to root_url
+    end
+  end
+
 end
