@@ -1,5 +1,7 @@
 class PostsController < ApplicationController
 
+  before_action :signed_in_user, except: [:show, :index]
+
   #/posts
   def index
     @posts = Post.all.where(publish: true)

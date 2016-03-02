@@ -14,6 +14,12 @@
             <li>
               <h5><%= link_to "Categorías", categories_path, :class => "header_link" %></h5>
             </li>
+            <% if signed_in? %>
+            <li>
+              <h5><%= link_to "CERRAR SESION", logout_path, {method: "delete", 
+                :class => "header_link"} %></h5>
+            </li>
+            <% end %>
             <li>
               <h5><%= link_to "Regresar a D0A3", "http://deceroatres.org",
               :class => "header_link" %></h5>

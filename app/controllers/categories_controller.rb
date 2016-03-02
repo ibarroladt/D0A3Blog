@@ -1,5 +1,7 @@
 class CategoriesController < ApplicationController
 
+  before_action :signed_in_user, except: [:show, :index]
+
   def index
     if params[:tag]
       @tags         = Post.tagged_with(params[:tag])
@@ -27,17 +29,7 @@ class CategoriesController < ApplicationController
   def show
     category  = Category.friendly.find(params[:id])
     @category = ActsAsTaggableOn::Tag.find_by_name(category.name)
-    puts "-" * 100
-    puts
-    puts "category es: #{@category.inspect}"
-    puts
-    puts "-" * 100
     if @category
-    puts "-" * 100
-    puts
-    puts "ENTRAMOS"
-    puts
-    puts "-" * 100
       redirect_to@category
     else
       @category = Category.friendly.find(params[:id])
