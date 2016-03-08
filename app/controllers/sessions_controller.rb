@@ -16,7 +16,7 @@ class SessionsController < ApplicationController
 
   def destroy
     log_out
-    flash[:success] = 'Hasta luego, te estaremos esperando!"'
+    flash[:success] = 'Hasta luego, te estaremos esperando!'
     redirect_to root_url
   end
 
