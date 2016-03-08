@@ -10,6 +10,7 @@
 <body class="wood">
   <div id="wrap" class="boxed">
   <span id="hline"></span>
+  <div class="container">
   <%= render 'layouts/header' %>
   <% flash.each do |key, value| %>
   <%= content_tag(:div, value, class: "alert alert-#{key}") %>
@@ -17,6 +18,7 @@
 
 <%= yield %>
   <%= render 'layouts/footer' %>
+  </div>
 </div>
 </body>
 </html>

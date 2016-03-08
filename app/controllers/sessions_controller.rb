@@ -9,7 +9,7 @@ class SessionsController < ApplicationController
       session[:id] = user.id
       redirect_to posts_path
     else
-      flash[:danger] = "Combinación de email/password errónea."
+      flash.now[:danger] = "Combinación de email/password errónea."
       render 'new'
     end
   end
