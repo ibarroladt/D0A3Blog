@@ -32,6 +32,54 @@ $dark-green:  #2b9326;
 $gray:        #d1d2d4;
 $dark-gray:   #a4a6a8;
 
+/* font and size */
+
+h2, h3, h4, h5, h6, p, li, a, span {
+  font-family: 'TitilliumText22LMedium', Arial, sans-serif;
+}
+
+p {
+  font-size: 16px;
+  font-family: 'TitilliumText22LRegular';
+}
+
+p a {
+  font-size: 16px;  
+}
+
+li strong a {
+  font-size: 13px;  
+}
+
+h1 {
+  font-size: 28px;
+  font-family: 'TitilliumText22LRegular';
+}
+
+h2 {
+  font-size: 20px;
+  font-family: 'TitilliumText22LMedium';
+}
+
+h3 {
+  font-size: 18px;
+  font-family: 'TitilliumText22LMedium';
+}
+
+h4 {
+  font-size: 16px;
+  font-family: 'TitilliumText22LMedium';
+}
+
+li a {
+  font-size: 16px;
+  font-family: 'TitilliumText22LMedium';
+}
+
+li {
+  font-size: 13px;
+  font-family: 'TitilliumText22LMedium';  
+}
 .alert {
   margin-top: 10px;
 }
