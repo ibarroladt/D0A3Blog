@@ -34,6 +34,36 @@ $dark-gray:   #a4a6a8;
 
 /* font and size */
 
+@font-face {
+    font-family: 'TitilliumText22LThin';
+    src: font-url('TitilliumText22L001-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumText22LLight';
+    src: font-url('TitilliumText22L002-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumText22LRegular';
+    src: font-url('TitilliumText22L003-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumText22LMedium';
+    src: font-url('TitilliumText22L004-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumText22LBold';
+    src: font-url('TitilliumText22L005-webfont.ttf');
+}
+
+@font-face {
+    font-family: 'TitilliumText22LXBold';
+    src: font-url('TitilliumText22L006-webfont.ttf');
+}
+
 h2, h3, h4, h5, h6, p, li, a, span {
   font-family: 'TitilliumText22LMedium', Arial, sans-serif;
 }
