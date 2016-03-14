@@ -31,8 +31,11 @@ gem 'simple_form'
 # for readable urls
 gem 'friendly_id'
 
+#post relations
 gem 'acts-as-taggable-on'
 
+# fonts
+gem "font-awesome-rails"
 # markdown
 gem 'redcarpet'
 
