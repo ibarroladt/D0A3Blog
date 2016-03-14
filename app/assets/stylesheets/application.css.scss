@@ -11,11 +11,13 @@
  * file per style scope.
  *
  *= require_tree .
+ *= require font-awesome
  *= require_self
  */
 
  @import "bootstrap-sprockets";
  @import "bootstrap";
+ @import "font-awesome";
 
 /* Bacground image */
 
@@ -35,42 +37,42 @@ $dark-gray:   #a4a6a8;
 /* font and size */
 
 @font-face {
-    font-family: 'TitilliumText22LThin';
-    src:font_url('TitilliumText22L001-webfont.ttf');
+    font-family: "TitilliumText22LThin";
+    src:font_url("TitilliumText22L001-webfont.ttf");
 }
 
 @font-face {
-    font-family: 'TitilliumText22LLight';
-    src:font_url('TitilliumText22L002-webfont.ttf');
+    font-family: "TitilliumText22LLight";
+    src:font_url("TitilliumText22L002-webfont.ttf");
 }
 
 @font-face {
-    font-family: 'TitilliumText22LRegular';
-    src:font_url('TitilliumText22L003-webfont.ttf');
+    font-family: "TitilliumText22LRegular";
+    src:font_url("TitilliumText22L003-webfont.ttf");
 }
 
 @font-face {
-    font-family: 'TitilliumText22LMedium';
-    src:font_url('TitilliumText22L004-webfont.ttf');
+    font-family: "TitilliumText22LMedium";
+    src:font_url("TitilliumText22L004-webfont.ttf");
 }
 
 @font-face {
-    font-family: 'TitilliumText22LBold';
-    src:font_url('TitilliumText22L005-webfont.ttf');
+    font-family: "TitilliumText22LBold";
+    src:font_url("TitilliumText22L005-webfont.ttf");
 }
 
 @font-face {
-    font-family: 'TitilliumText22LXBold';
-    src:font_url('TitilliumText22L006-webfont.ttf');
+    font-family: "TitilliumText22LXBold";
+    src:font_url("TitilliumText22L006-webfont.ttf");
 }
 
 h2, h3, h4, h5, h6, p, li, a, span {
-  font-family: 'TitilliumText22LMedium', Arial, sans-serif;
+  font-family: "TitilliumText22LMedium", Arial, sans-serif;
 }
 
 p {
   font-size: 16px;
-  font-family: 'TitilliumText22LRegular';
+  font-family: "TitilliumText22LRegular";
 }
 
 p a {
@@ -83,32 +85,32 @@ li strong a {
 
 h1 {
   font-size: 28px;
-  font-family: 'TitilliumText22LRegular';
+  font-family: "TitilliumText22LRegular";
 }
 
 h2 {
   font-size: 20px;
-  font-family: 'TitilliumText22LMedium';
+  font-family: "TitilliumText22LMedium";
 }
 
 h3 {
   font-size: 18px;
-  font-family: 'TitilliumText22LMedium';
+  font-family: "TitilliumText22LMedium";
 }
 
 h4 {
   font-size: 16px;
-  font-family: 'TitilliumText22LMedium';
+  font-family: "TitilliumText22LMedium";
 }
 
 li a {
   font-size: 16px;
-  font-family: 'TitilliumText22LMedium';
+  font-family: "TitilliumText22LMedium";
 }
 
 li {
   font-size: 13px;
-  font-family: 'TitilliumText22LMedium';  
+  font-family: "TitilliumText22LMedium";  
 }
 .alert {
   margin-top: 10px;
