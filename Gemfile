@@ -44,6 +44,7 @@ gem 'carrierwave'
 # gem "rmagick"
 gem "mini_magick"
 
+gem 'google-webfonts-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
