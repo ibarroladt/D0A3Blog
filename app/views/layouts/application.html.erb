@@ -5,7 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
-  <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'>
+  <%= google_webfonts_init(
+    {
+      google: ['Titillium Web', 'sans-serif']
+    }
+  ) %>
+  <!-- <link href='https://fonts.googleapis.com/css?family=Titillium+Web' rel='stylesheet' type='text/css'> -->
   <%= favicon_link_tag 'favicon.ico' %>
 </head>
 <body class="wood">
