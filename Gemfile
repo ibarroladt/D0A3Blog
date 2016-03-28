@@ -41,7 +41,8 @@ gem 'redcarpet'
 
 # gem to add images
 gem 'carrierwave'
-gem "rmagick"
+# gem "rmagick"
+gem "mini_magick"
 
 # Use Unicorn as the app server
 # gem 'unicorn'
