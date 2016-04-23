@@ -31,6 +31,8 @@ gem 'simple_form'
 # for readable urls
 gem 'friendly_id'
 
+gem 'acts_as_tree', '2.4.0'
+
 #post relations
 gem 'acts-as-taggable-on'
 
