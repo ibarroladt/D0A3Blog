@@ -61,6 +61,8 @@ group :production do
 end
 
 group :development do
+  # db schema
+  gem "rails-erd"
   gem "better_errors"
   gem "binding_of_caller"
 end
