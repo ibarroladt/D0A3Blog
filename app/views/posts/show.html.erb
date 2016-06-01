@@ -23,7 +23,7 @@
         <% end %>
           <h4><i><%= markdown(@post.summary) %></i></h4>
         </center>
-        <p align="justify"><%= markdown(@post.content) %></p>
+        <%= markdown(@post.content) %>
       </div>
     </div>
   </div>
