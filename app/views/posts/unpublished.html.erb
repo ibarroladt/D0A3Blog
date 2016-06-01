@@ -24,6 +24,8 @@
         <h3><%= link_to "#{post.unhyphen_title}", post_path(post), 
         {:style=>'color:#793284;', :class => "post_link"} %></h3>
         <h4><%= markdown(post.summary) %></h4>
+        <h5><%= post.updated_at.to_s(:short) %></h5>
+        <hr>
       <% end %>
     </div>
   </div>
