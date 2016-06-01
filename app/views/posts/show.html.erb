@@ -21,6 +21,7 @@
         <% @post.tags.each do |tag| %>
         <span class="label label-warning"><%= tag.name %></span>
         <% end %>
+        <%= @post.updated_at.to_s(:short) %>
           <h4><i><%= markdown(@post.summary) %></i></h4>
         </center>
         <div class="content"><%= markdown(@post.content) %></div>
