@@ -18,9 +18,11 @@
         <h1>Posts</h1>
         <span class="line"></span>
         <hr>
+        <h1>Categorías</h1>
         <% Post.category_counts.each do |tag| %>
         <%= link_to tag.name, tag_path(tag.name), class: "btn btn-sm btn-primary contact_tag" %>
         <% end %><br><br>
+        <h1>Etiquetas</h1>
         <% Post.tag_counts.each do |tag| %>
           <%= link_to tag.name, tag_path(tag.name), class: "btn btn-sm btn-warning contact_tag" %>
         <% end %><br><br>
@@ -32,10 +34,9 @@
         <% post.tags.each do |tag| %>
         <span class="label label-warning"><%= tag.name %></span>
         <% end %>
-        <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %></h3>
+        <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %>, <%= post.updated_at.strftime("%d %b %Y") %></h3>
         <h4><%= markdown(post.summary) %></h4>
-        <h5><%= post.created_at.to_s(:short) %></h5>
-        <hr>
+        <hr style="height:2px;border:none;color:#793284;background-color:#793284;" />
         <% end %>
       <% end %>
     </div>

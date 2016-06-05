@@ -50,6 +50,8 @@ gem 'google-webfonts-rails'
 # Use Unicorn as the app server
 # gem 'unicorn'
 
+# For comments
+gem 'acts_as_commentable'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 

@@ -15,13 +15,15 @@
       <div class="col-md-10 col-md-offset-1">
         <center>
         <%= image_tag(@post.avatar_url, class: "img_show") %><br>
+        <%= @post.updated_at.strftime("%d %b %Y") %><br>
         <% @post.categories.each do |cat| %>
-        <h4><span class="label label-primary"><%= cat.name %></span></h4>
+        <span class="label label-primary"><%= cat.name %></span>
         <% end %>
+        <br>
+        <br>
         <% @post.tags.each do |tag| %>
         <span class="label label-warning"><%= tag.name %></span>
         <% end %>
-        <%= @post.updated_at.to_s(:short) %>
           <h4><i><%= markdown(@post.summary) %></i></h4>
         </center>
         <div class="content"><%= markdown(@post.content) %></div>
