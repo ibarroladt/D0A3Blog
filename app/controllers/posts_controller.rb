@@ -25,6 +25,7 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
+    byebug
     if @post.save
       flash[:success] = "Artículo creado exitósamente"
       redirect_to posts_path
@@ -36,7 +37,6 @@ class PostsController < ApplicationController
   def update
     @post = Post.friendly.find(params[:id])
     if @post.update_attributes(post_params)
-      # @tag = "R_#{current_user.name}"
       @post.tag_list.add(@tag)
       @post.save
       flash[:success] = "Actualización exitosa"
@@ -54,6 +54,15 @@ class PostsController < ApplicationController
 
   def unpublished
     @posts = Post.all.where(publish: false)
+  end
+
+  def comments
+    byebug
+    @post = Post.friendly.find(params[:id])
+    comment = post.comments.create
+    comment.comment = params[:comment]
+    comment.save
+    redirect_to @post
   end
 
   private
