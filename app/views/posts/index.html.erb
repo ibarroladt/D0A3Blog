@@ -8,8 +8,14 @@
       <%= link_to "Ver posts sin publicar post", unpublished_path, 
       class: "btn btn-warning pull-right edit-btn-margin-left top_buttons" %>
       <% end %>
+
       <%= link_to "Ver Hashtags", tags_path, 
       class: "btn btn-default pull-right edit-btn-margin-left top_buttons" %>
+
+      <%= form_tag posts_path, method: :get do %>
+        <%= text_field_tag :search, params[:search] %>
+        <%= submit_tag "Buscar", name: nil, class: "btn"%>
+      <% end %>
       <% if @posts.empty? %>
         <h1>No hay posts en este momento</h1>
         <span class="line"></span>
@@ -27,16 +33,22 @@
           <%= link_to tag.name, tag_path(tag.name), class: "btn btn-sm btn-warning contact_tag" %>
         <% end %><br><br>
         <% @posts.each do |post| %>
+        <hr style="height:2px;border:none;color:#793284;background-color:#793284;" />
+        <div class="col-md-4">
         <%= link_to image_tag(post.avatar_url, class: "img_show"), post_path(post) %><br>
+        </div>
+        <div class="col-md-8">
         <% post.categories.each do |cat| %>
         <span class="label label-primary"><%= cat.name %></span>
         <% end %>
+        <br><br>
         <% post.tags.each do |tag| %>
         <span class="label label-warning"><%= tag.name %></span>
         <% end %>
         <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %>, <%= post.updated_at.strftime("%d %b %Y") %></h3>
+        </div>
+        <div class="clearfix"></div>
         <h4><%= markdown(post.summary) %></h4>
-        <hr style="height:2px;border:none;color:#793284;background-color:#793284;" />
         <% end %>
       <% end %>
     </div>
