@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   validates_presence_of :title, :summary, :content
   before_save :titleize_title, :hyphen_title
   
+  has_many :comments
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :categories
   
