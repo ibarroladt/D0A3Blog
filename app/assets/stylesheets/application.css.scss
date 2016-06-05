@@ -20,6 +20,9 @@
  @import "font-awesome";
 
 /* Bacground image */
+body {
+  text-align: justify;
+}
 
 body.wood {
   background:url(/assets/wood.jpg) repeat;

@@ -16,9 +16,10 @@
 <!--  -->
           <button class="btn btn-sm btn-default btn_categories">
             <%= link_to "#{cat.name} (#{cat.taggings_count})", tag_path(cat.name), class: "btn btn-sm btn-default contact_tag" %>
-            <%# TODO falta ver que esto solo lo pueda ver un admin %>
+            <% if current_user %>
             <%= link_to "X", tag_path(cat), method: :delete,
             data: { confirm: "¿Estás seguro de borrar '#{cat.name}'?" }, :class => "delete_tag" %>
+            <% end %>
           </button>
 <!--  -->
           <% end %><br><br>
@@ -31,9 +32,10 @@
 <!--  -->
           <button class="btn btn-sm btn-default btn_tags">
             <%= link_to "#{tag.name} (#{tag.taggings_count})", tag_path(tag.name), class: "btn btn-sm btn-default contact_tag" %>
-            <%# TODO falta ver que esto solo lo pueda ver un admin %>
+            <% if current_user %>
             <%= link_to "X", tag_path(tag), method: :delete,
             data: { confirm: "¿Estás seguro de borrar '#{tag.name}'?" }, :class => "delete_tag" %>
+            <% end %>
           </button>
 <!--  -->
           <% end %>
