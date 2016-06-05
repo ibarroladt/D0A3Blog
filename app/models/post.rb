@@ -7,6 +7,9 @@ class Post < ActiveRecord::Base
   acts_as_taggable # Alias for acts_as_taggable_on :tags
   acts_as_taggable_on :categories
   
+  include PgSearch
+  pg_search_scope :search_by_title, :against => :title
+  
   # Readable url
   extend FriendlyId
   friendly_id :title

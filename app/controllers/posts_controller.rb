@@ -4,7 +4,11 @@ class PostsController < ApplicationController
 
   #/posts
   def index
-    @posts = Post.all.where(publish: true)
+    if params[:search]
+      @posts = Post.search_by_title(params[:search]).where(publish: true)
+    else
+      @posts = Post.all.where(publish: true)
+    end
   end
 
   def show
