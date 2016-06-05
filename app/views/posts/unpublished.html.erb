@@ -20,11 +20,12 @@
         <div class="col-md-8">
         <% post.categories.each do |cat| %>
         <span class="label label-primary"><%= cat.name %></span>
-        <% end %><br>
+        <% end %><br><br>
         <% post.tags.each do |tag| %>
         <span class="label label-warning"><%= tag.name %></span>
         <% end %>
         </div>
+        <div class="clearfix"></div>
         <h3><%= link_to "#{post.unhyphen_title}", post_path(post), 
         {:style=>'color:#793284;', :class => "post_link"} %></h3>
         <h4><%= markdown(post.summary) %></h4>
