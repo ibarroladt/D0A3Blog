@@ -11,6 +11,27 @@
           </center>
         </div>
       </div>
+      <br>
+      <div class="clearfix"></div>
+        <% @posts.each do |post| %>
+        <div class="col-md-4">
+        <%= link_to image_tag(post.avatar_url, class: "img_show"), post_path(post) %><br>
+        </div>
+        <div class="col-md-8">
+        <% post.categories.each do |cat| %>
+        <span class="label label-primary"><%= cat.name %></span>
+        <% end %>
+        <br><br>
+        <% post.tags.each do |tag| %>
+        <span class="label label-warning"><%= tag.name %></span>
+        <% end %>
+        </div>
+        <div class="clearfix"></div>
+        <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %></h3>
+        <h4><%= markdown(post.summary) %></h4>
+        <h5><%= post.created_at.to_s(:short) %></h5>
+        <hr>
+        <% end %>
 
 <p>De 0 a 3 es una organización enfocada al desarrollo infantil temprano, nos preocupamos por que el futuro de nuestro niños sea altamente productivo y este tenga repercusiones positivas que ayuden a una mejor sociedad. Es por eso que en este blog te encontrarás información y consejos de cómo impulsar el desarrollo cerebral de tu bebé, así como fomentar una buena relación contigo y el resto del entorno en el que crece.
 </p>
