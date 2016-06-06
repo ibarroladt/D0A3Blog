@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   root 'static_pages#home'
   resources :users
   resources :posts
-  get 'comments', to: 'posts#comments', as: 'comment'
+  patch '/posts/:id/comments', to: 'posts#comments', as: 'comments'
   resources :categories
   resources :posts_in_categories
   get 'tags/:tag', to: 'categories#index', as: :tag

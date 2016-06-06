@@ -57,10 +57,9 @@ class PostsController < ApplicationController
   end
 
   def comments
-    byebug
     @post = Post.friendly.find(params[:id])
-    comment = post.comments.create
-    comment.comment = params[:comment]
+    comment = @post.comments.create
+    comment.comment = params[:comment][:comment]
     comment.save
     redirect_to @post
   end

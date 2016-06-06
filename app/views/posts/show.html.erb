@@ -29,19 +29,17 @@
           <h4><i><%= markdown(@post.summary) %></i></h4>
         </center>
         <div class="content"><%= markdown(@post.content) %></div>
-
-
-
-          <%= simple_form_for @post.comments.create do |f| %>
-          <%= f.input :comment, label: "Deja tus comentarios", as: :text, :input_html => { :rows => 10 }, class: "form-control" %>
-          <%= f.submit "Guardar cambios", class: "btn btn-block btn-primary" %>
-          <%= link_to "Borrar post", @post, method: :delete, 
-          data: { confirm: "¿Estás seguro de borrar el post '#{@post.unhyphen_title}'?" },
-                                          class: "btn btn-danger btn-block" %>
+          <%= simple_form_for @post.comments.create, url: comments_path do |f| %>
+          <%= f.input :comment, label: "Deja tus comentarios", as: :text, input_html: { rows: 5 }, class: "form-control" %>
+          <%= f.submit "Enviar comentarios", class: "btn btn-block btn-primary" %>
           <% end %>
-
-
-
+          <br>
+          <% @post.comments.each do |comment| %>
+          <% if comment.comment %>
+          <div class="comments"><%= comment.created_at.strftime("%d %b %Y") %><br><%= comment.comment %>
+            </div>
+          <% end %>
+          <% end %>
       </div>
     </div>
   </div>
