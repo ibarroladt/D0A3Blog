@@ -14,8 +14,8 @@
         <hr>
       <% end %>
       <% @posts.each do |post| %>
-        <div class="col-md-4">
         <hr style="height:2px;border:none;color:#793284;background-color:#793284;" />
+        <div class="col-md-4">
         <%= link_to image_tag(post.avatar_url, class: "img_show"), post_path(post) %><br>
         </div>
         <div class="col-md-8">
