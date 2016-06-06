@@ -46,8 +46,8 @@
         <span class="label label-warning"><%= tag.name %></span>
         <% end %>
         </div>
-        <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %>, <%= post.updated_at.strftime("%d %b %Y") %></h3>
         <div class="clearfix"></div>
+        <h3><%= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"} %>, <%= post.updated_at.strftime("%d %b %Y") %></h3>
         <h4><%= markdown(post.summary) %></h4>
         <% end %>
       <% end %>
