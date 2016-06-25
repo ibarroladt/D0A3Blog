@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include SharedMethods
 
-  validates_presence_of :title, :summary, :content
+  validates_presence_of :title, :summary, :content, :mother_category
   before_save :titleize_title, :hyphen_title
   
   acts_as_taggable # Alias for acts_as_taggable_on :tags
@@ -18,10 +18,6 @@ class Post < ActiveRecord::Base
   
   # For pictures
   mount_uploader :avatar, AvatarUploader
-
-  # Relations
-  # has_many :posts_in_categories
-  # has_many :categories, through: :posts_in_categories
 
   def unhyphen_title
     self.title.gsub("-"," ")

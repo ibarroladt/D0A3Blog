@@ -7,7 +7,7 @@
         = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
       = link_to "Ver Hashtags", tags_path, class: "btn btn-default pull-right edit-btn-margin-left top_buttons"
       = form_tag posts_path, method: :get do
-        = text_field_tag :search, params[:search]
+        = text_field_tag :search, params[:search], autofocus: true
         = submit_tag "Buscar", name: nil, class: "btn"
       - if @posts.empty?
         %h1 No hay posts en este momento
