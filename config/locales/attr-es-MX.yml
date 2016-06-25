@@ -8,6 +8,7 @@ es-MX:
         content:  El contenido
         publish:  Publicado
         mother_category: Categoría madre
+        author: Autor(a)
       task:
         order_num: Número de tarea
         title:     Título

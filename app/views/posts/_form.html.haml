@@ -11,6 +11,7 @@
     = f.input :title,   label: "Título",      class: "form-control"
     = f.input :summary, label: "Resumen", as: :text, input_html: { rows: 4 }, class: "form-control"
     = f.input :content,   label: "Contenido", as: :text, input_html: { rows: 10 }, class: "form-control"
+    = f.input :author, label: "Autor(a)", class: "form-control"
     = f.input :mother_category, collection: mother_category_options, label: "Categoría madre", class: "form-control"
     = f.input :publish,   label: "Publicado", class: "form-control"
     - if params[:action] == 'new'

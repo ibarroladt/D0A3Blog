@@ -1,7 +1,7 @@
 class Post < ActiveRecord::Base
   include SharedMethods
 
-  validates_presence_of :title, :summary, :content, :mother_category
+  validates_presence_of :title, :summary, :content, :mother_category, :author
   before_save :titleize_title, :hyphen_title
   
   acts_as_taggable # Alias for acts_as_taggable_on :tags

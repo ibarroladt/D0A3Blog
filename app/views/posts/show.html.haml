@@ -2,27 +2,26 @@
 .container
   .row
     .col-md-12
-      = link_to "Volver a los posts", posts_path,                            |
-        class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" |
+      = link_to "Volver a los posts", posts_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
       - if current_user
-        = link_to "Editar", edit_post_path(@post),                             |
-          class: "btn btn-warning pull-right edit-btn-margin-left top_buttons" |
+        = link_to "Editar", edit_post_path(@post), class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
       %h1= @post.unhyphen_title
       %span.line
-      %hr/
+      %hr
       - if !@post.publish
         %h1 ESTE POST NO ESTA PUBLICADO
       .col-md-10.col-md-offset-1
         %center
           = image_tag(@post.avatar_url, class: "img_show")
-          %br/
-          = @post.updated_at.strftime("%d %b %Y")
-          %br/
+          %br
+          = "#{@post.updated_at.strftime("%d %b %Y")}, Autor(a):"
+          %i= @post.author
+          %br
           - @post.categories.each do |cat|
             %span.label-category
               %b= cat.name
-          %br/
-          %br/
+          %br
+          %br
           - @post.tags.each do |tag|
             %span.label-tag
               %b= tag.name
@@ -32,10 +31,10 @@
         = simple_form_for @post.comments.create, url: comments_path do |f|
           = f.input :comment, label: "Deja tus comentarios", as: :text, input_html: { rows: 5 }, class: "form-control"
           = f.submit "Enviar comentarios", class: "btn btn-block btn-primary"
-        %br/
+        %br
         - @post.comments.each do |comment|
           - if comment.comment
             .comments
               = comment.created_at.strftime("%d %b %Y")
-              %br/
+              %br
               = comment.comment
