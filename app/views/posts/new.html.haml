@@ -1,0 +1,10 @@
+- provide(:title, "Nuevo post")
+.container
+  .row
+    .col-md-12
+      = link_to "Volver a los posts", posts_path,                            |
+        class: "btn btn-primary pull-right edit-btn-margin-left top_buttons" |
+      %h1 Nuevo post
+      %span.line
+      %hr/
+      = render 'posts/form'

@@ -1,0 +1,43 @@
+- provide(:title, "Editar #{@post.unhyphen_title}")
+.container
+  .row
+    .col-md-12
+      = link_to "volver al post", post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
+      %h1 Editar post
+      %span.line
+      %hr
+      #tag_cloud
+        %h3 Categorías
+        #category_cloud
+          #categories_div.col-md-10
+            - Post.category_counts.each do |cat|
+              - if @post.categories.include?(cat)
+                %button.btn.btn-sm.btn-primary.btn_categories= cat.name
+              - else
+                %button.btn.btn-sm.btn-default.btn_categories= cat.name
+          .col-md-2
+            %center
+              %h5 Añadir categorías
+            .form-group
+              .input-group
+                %input#new_post_category.form-control{type: "text"}/
+                #add_post_category.input-group-addon +
+        %br/
+        %h3 Hashtags
+        #tag_cloud
+          #tags_div.col-md-10
+            - Post.tag_counts.each do |tag|
+              - if @post.tags.include?(tag)
+                %button.btn.btn-sm.btn-warning.btn_tags= tag.name
+              - else
+                %button.btn.btn-sm.btn-default.btn_tags= tag.name
+          .col-md-2
+            %center
+              %h5 Añadir etiquetas
+            .form-group
+              .input-group
+                %input#new_post_tag.form-control{type: "text"}/
+                #add_post_tag.input-group-addon +
+        %br/
+        .clearfix
+        = render 'posts/form'

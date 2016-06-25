@@ -1,0 +1,30 @@
+- provide(:title, "Posts sin publicar")
+.container
+  .row
+    .col-md-12
+      = link_to "Volver a los post publicados", posts_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
+      - if @posts.empty?
+        %h1 No hay posts sin publicar
+        %span.line
+        %hr
+      - else
+        %h1
+          Hay #{@posts.count} posts sin publicar
+        %span.line
+        %hr
+      - @posts.each do |post|
+        %hr{style: "height:2px;border:none;color:#793284;background-color:#793284;"}
+        .col-md-4
+          = link_to image_tag(post.avatar_url, class: "img_show"), post_path(post)
+          %br
+        .col-md-8
+          - post.categories.each do |cat|
+            %span.label.label-primary= cat.name
+          %br
+          %br
+          - post.tags.each do |tag|
+            %span.label.label-warning= tag.name
+        .clearfix
+        %h3= link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
+        %h4= markdown(post.summary)
+        %h5= post.updated_at.to_s(:short)

@@ -16,11 +16,11 @@
           %br/
         .col-md-8
           - post.categories.each do |cat|
-            %span.label.label-primary= cat.name
+            %span.label-category= cat.name
           %br/
           %br/
           - post.tags.each do |tag|
-            %span.label.label-warning= tag.name
+            %span.label-tag= tag.name
         .clearfix
         %h3= link_to "#{post.unhyphen_title}", post_path(post), {:style=>'color:#793284;', :class => "post_link"}
         %h4= markdown(post.summary)

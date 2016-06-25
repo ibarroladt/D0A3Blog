@@ -298,6 +298,9 @@ span.line {
   margin-left: 10px;
 }
 
+.btn_categories {
+  margin-bottom: 3px;
+}
 /* Purple btn */
 
 .btn-primary {
@@ -399,6 +402,14 @@ span.line {
 }
 
 /* Labels */
+.label-category {
+  color: $purple;
+}
+
+.label-tag {
+  color: $green;
+}
+
 .label-primary {
   background-color: $purple;
 }
