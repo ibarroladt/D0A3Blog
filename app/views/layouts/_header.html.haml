@@ -1,0 +1,20 @@
+%header
+  .container
+    .row
+      .col-md-1
+        = link_to image_tag("logo.png", class: "imgD0A3", style: "height:110px;"),root_path
+      .col-md-9.col-md-offset-2
+        %nav.navigation
+          %ul#nav
+            %li
+              %h5= link_to "Posts", posts_path, class: "header_link"
+            %li
+              %h5= link_to "Categorías", categories_path, class: "header_link"
+            - if signed_in?
+              %li
+                %h5= link_to "CERRAR SESION", logout_path, {method: "delete", class: "header_link"}
+            %li
+              %h5= link_to "Regresar a D0A3", "http://deceroatres.org",
+                  class: "header_link"
+.col-md-12
+  %hr/

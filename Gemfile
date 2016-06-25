@@ -30,7 +30,9 @@ gem 'simple_form'
 
 # for readable urls
 gem 'friendly_id'
-
+# for better html
+gem 'haml', '~> 4.0.5'
+gem 'haml-rails'
 # for search fields
 gem 'pg_search'
 gem 'acts_as_tree', '2.4.0'
