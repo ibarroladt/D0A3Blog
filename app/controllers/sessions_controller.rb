@@ -7,7 +7,7 @@ class SessionsController < ApplicationController
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
       session[:id] = user.id
-      redirect_to posts_path
+      redirect_to root_path
     else
       flash[:danger] = 'Combinación de email/password errónea.'
       render 'new'
@@ -17,7 +17,7 @@ class SessionsController < ApplicationController
   def destroy
     log_out
     flash[:success] = 'Hasta luego, te estaremos esperando!"'
-    redirect_to root_url
+    redirect_to root_path
   end
 
 end

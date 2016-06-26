@@ -7,7 +7,20 @@ class PostsController < ApplicationController
     if params[:search]
       @posts = Post.search_by_title(params[:search]).where(publish: true)
     else
-      @posts = Post.all.where(publish: true)
+      case params[:filter]
+      when 'Social'
+        @posts = Post.social.paginate(page: params[:page], per_page: 30)
+      when 'Actividades'
+        @posts = Post.activities.paginate(page: params[:page], per_page: 30)
+      when 'Tips'
+        @posts = Post.tips.paginate(page: params[:page], per_page: 30)
+      when 'Exito'
+        @posts = Post.success.paginate(page: params[:page], per_page: 30)
+      when 'Articulos'
+        @posts = Post.articles.paginate(page: params[:page], per_page: 30)
+      else
+        @posts = Post.where(publish: true).paginate(page: params[:page], per_page: 30)
+      end
     end
   end
 
@@ -28,7 +41,7 @@ class PostsController < ApplicationController
     byebug
     if @post.save
       flash[:success] = "Artículo creado exitósamente"
-      redirect_to posts_path
+      redirect_to root_path
     else
       render 'new'
     end
@@ -49,11 +62,11 @@ class PostsController < ApplicationController
   def destroy
     Post.friendly.find(params[:id]).destroy
     flash[:success] = "Artículo borrado"
-    redirect_to posts_path
+    redirect_to root_path
   end
 
   def unpublished
-    @posts = Post.all.where(publish: false)
+    @posts = Post.all.where(publish: false).paginate(page: params[:page], per_page: 30)
   end
 
   def comments

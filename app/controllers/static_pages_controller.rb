@@ -1,8 +1,7 @@
 class StaticPagesController < ApplicationController
 
   def home
-    ids = Post.order('updated_at DESC').limit(5).pluck(:id)
-    @posts = Post.where(id: ids)
+    @posts = Post.all.order('updated_at DESC').where(publish: true).paginate(page: params[:page], per_page: 10)
   end
 
 end

@@ -12,6 +12,12 @@ class Post < ActiveRecord::Base
   
   acts_as_commentable
 
+  scope :articles, -> { where('mother_category = ? AND publish = ?', 'Artículos', true) }
+  scope :tips, -> { where('mother_category = ? AND publish = ?', 'Tips', true) }
+  scope :social, -> { where('mother_category = ? AND publish = ?', 'Social', true) }
+  scope :success, -> { where('mother_category = ? AND publish = ?', 'Casos de Éxito', true) }
+  scope :activities, -> { where('mother_category = ? AND publish = ?', 'Actividades', true) }
+
   # Readable url
   extend FriendlyId
   friendly_id :title

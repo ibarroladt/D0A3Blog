@@ -2,14 +2,13 @@
 .container
   .row
     .col-md-12
-      = link_to "Volver a los post publicados", posts_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
+      = link_to "Volver a los post publicados", root_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
       - if @posts.empty?
         %h1 No hay posts sin publicar
         %span.line
         %hr
       - else
-        %h1
-          Hay #{@posts.count} posts sin publicar
+        %h1 Hay #{@posts.count} posts sin publicar
         %span.line
         %hr
       - @posts.each do |post|
@@ -27,4 +26,6 @@
         .clearfix
         %h3= link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
         %h4= markdown(post.summary)
-        %h5= post.updated_at.to_s(:short)
+        %h5= post.updated_at.strftime("%d %B %Y")
+%center
+  = will_paginate @posts

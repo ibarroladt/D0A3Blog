@@ -1,0 +1,17 @@
+- provide(:title, "Categorias")
+.container
+  .col-md-12
+    %h1 Estas son las categorías y tags que hay
+    %span.line
+    %hr
+    #tag_cloud
+      #tags_div.col-md-10.col-sm-10.col-xs-10
+        %h3 Categorías
+        - @categories.each do |cat|
+          %span.label-category= "#{cat.name} #{(cat.taggings_count)}"
+          = link_to "X", tag_path(cat), method: :delete, data: { confirm: "¿Estás seguro de borrar '#{cat.name}'?" }, class: "delete_tag"
+        .clearfix
+        %h3 Hashtags
+        - @tags.each do |tag|
+          %span.label-tag= "#{tag.name} (#{tag.taggings_count})"
+          = link_to "X", tag_path(tag), method: :delete, data: { confirm: "¿Estás seguro de borrar '#{tag.name}'?" }, class: "delete_tag"

@@ -5,8 +5,7 @@ Rails.application.routes.draw do
   resources :users
   resources :posts
   patch '/posts/:id/comments', to: 'posts#comments', as: 'comments'
-  resources :categories
-  resources :posts_in_categories
+  resources :categories, only: [:index]
   get 'tags/:tag', to: 'categories#index', as: :tag
   resources :tags
   get    'new'     => 'sessions#new'

@@ -1,48 +1,49 @@
 - provide(:title, "Posts")
 .container
-  .row
-    .col-md-12
-      - if signed_in?
-        = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
-        = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
-      = link_to "Ver Hashtags", tags_path, class: "btn btn-default pull-right edit-btn-margin-left top_buttons"
-      = form_tag posts_path, method: :get do
-        = text_field_tag :search, params[:search], autofocus: true
-        = submit_tag "Buscar", name: nil, class: "btn"
-      - if @posts.empty?
-        %h1 No hay posts en este momento
-        %span.line
-        %hr/
-      - else
-        %h1 Posts
-        %span.line
-        %hr/
-        %h1 Categorías
-        - Post.category_counts.each do |cat|
-          = link_to cat.name, tag_path(cat.name), class: "label-category contact_tag"
-        %br/
-        %br/
-        %h1 Etiquetas
-        - Post.tag_counts.each do |tag|
-          = link_to tag.name, tag_path(tag.name), class: "label-tag contact_tag"
-        %br/
-        %br/
-        - @posts.each do |post|
-          %hr{:style => "height:2px;border:none;color:#793284;background-color:#793284;"}/
-          .col-md-4
-            = link_to image_tag(post.avatar_url, class: "img_show"), post_path(post)
-            %br/
-          .col-md-8
-            - post.categories.each do |cat|
-              %span.label-category
-                %b= cat.name
-            %br/
-            %br/
-            - post.tags.each do |tag|
-              %span.label-tag
-                %b= tag.name
-          .clearfix
-          %h3
-            = link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
-          = post.updated_at.strftime("%d %b %Y")
-          %h4= markdown(post.summary)
+  .col-md-12
+    - if signed_in?
+      = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
+      = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
+    = link_to "Ver Hashtags", tags_path, class: "btn btn-default pull-right edit-btn-margin-left top_buttons"
+    = render 'shared/categories'
+    = form_tag posts_path, method: :get do
+      = text_field_tag :search, params[:search], autofocus: true
+      = submit_tag "Buscar", name: nil, class: "btn btn-primary"
+    - if @posts.empty?
+      %h1 No hay posts en este momento
+      %span.line
+      %hr
+    - else
+      %h1 Posts
+      %span.line
+      %hr
+      %h1 Categorías
+      - Post.category_counts.each do |cat|
+        = link_to cat.name, tag_path(cat.name), class: "label-category contact_tag"
+      %br
+      %br
+      %h1 Etiquetas
+      - Post.tag_counts.each do |tag|
+        = link_to tag.name, tag_path(tag.name), class: "label-tag contact_tag"
+      %br
+      %br
+      - @posts.each do |post|
+        %hr{style: "height:2px;border:none;color:#793284;background-color:#793284;"}
+        .col-md-4
+          = link_to image_tag(post.avatar_url, class: "img_show"), post_path(post)
+          %br
+        .col-md-8
+          - post.categories.each do |cat|
+            %span.label-category
+              %b= cat.name
+          %br
+          %br
+          - post.tags.each do |tag|
+            %span.label-tag
+              %b= tag.name
+        .clearfix
+        %h3
+          = link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
+        = post.updated_at.strftime("%d %b %Y")
+        %h4= markdown(post.summary)
+    = will_paginate @posts

@@ -1,0 +1,18 @@
+%h2 Redes sociales
+= link_to 'https://twitter.com/DeCeroATres', target: '_blank' do
+  %img.sm{alt: "", src: "http://deceroatres.org/wp-content/themes/Crevision/images/icons/twitter.png"}
+
+= link_to 'https://www.facebook.com/De-Cero-A-Tres-Fundaci%C3%B3n-311990848883647/', target: '_blank' do
+  %img.sm{alt: "", src: "http://deceroatres.org/wp-content/themes/Crevision/images/icons/facebook.png"}
+= link_to 'https://www.youtube.com/user/ceroatres', target: '_blank' do
+  - 'Youtube'
+%h2 Categorías
+- uniq_categories.each do |name|
+  - if controller.controller_name == 'posts'
+    = link_to name, tag_path(name), class: "#{'label-category' if contains_category_name(@post, name)}"
+  = link_to name, tag_path(name), class: 'label-category'
+%h2 Tags
+- uniq_tags.each do |name|
+  - if controller.controller_name == 'posts'
+    = link_to name, tag_path(name), class: "#{'label-tag' if contains_tag_name(@post, name)}"
+  = link_to name, tag_path(name), class: 'label-tag'

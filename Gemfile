@@ -36,7 +36,8 @@ gem 'haml-rails'
 # for search fields
 gem 'pg_search'
 gem 'acts_as_tree', '2.4.0'
-
+# for pagination
+gem 'will_paginate', '~> 3.1.0'
 #post relations
 gem 'acts-as-taggable-on'
 
