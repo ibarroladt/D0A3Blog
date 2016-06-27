@@ -9,7 +9,7 @@
             %li
             - if signed_in?
               %li
-                %h5= link_to "Categorías y Tags", categories_path, class: "header_link"
+                %h5= link_to "Categorías y Tags", tags_path, class: "header_link"
               %li
                 %h5= link_to "CERRAR SESION", logout_path, {method: "delete", class: "header_link"}
             %li

@@ -1,6 +1,11 @@
-.row
+.categories-btn.col-md-12
   = link_to "Articulos", posts_path(filter: 'Articulos'), class: 'btn btn-primary'
   = link_to "Social", posts_path(filter: 'Social'), class: 'btn btn-warning'
   = link_to "Tips", posts_path(filter: 'Tips'), class: 'btn btn-info'
-  = link_to "Actividades", posts_path(filter: 'Actividades'), class: 'btn btn-success'
-  = link_to "Casos de Éxito", posts_path(filter: 'Exito'), class: 'btn btn-primary'
+  = link_to "Actividades", posts_path(filter: 'Actividades'), class: 'btn btn-secondary'
+  = link_to "Casos de Éxito", posts_path(filter: 'Exito'), class: 'btn btn-default'
+  = form_tag posts_path, class: 'search', method: :get do
+    = text_field_tag :search, params[:search], autofocus: true
+    = submit_tag "Buscar", name: nil, class: "btn btn-primary btn-mini"
+%br
+%br

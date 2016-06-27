@@ -4,11 +4,9 @@
     - if signed_in?
       = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
       = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
-    = link_to "Ver Hashtags", tags_path, class: "btn btn-default pull-right edit-btn-margin-left top_buttons"
     = render 'shared/categories'
-    = form_tag posts_path, method: :get do
-      = text_field_tag :search, params[:search], autofocus: true
-      = submit_tag "Buscar", name: nil, class: "btn btn-primary"
+    %br
+    %br
     - if @posts.empty?
       %h1 No hay posts en este momento
       %span.line

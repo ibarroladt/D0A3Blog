@@ -3,18 +3,17 @@
     %h1 Blog de D0A3
     %span.line
     %hr
-    .row
-      %center
-        = image_tag("cover.jpg", class: "img-center img-responsive")
+    %center
+      = image_tag("cover.jpg", class: "img-center img-responsive")
     = render 'shared/categories'
-    = form_tag posts_path, method: :get do
-      = text_field_tag :search, params[:search], autofocus: true
-      = submit_tag "Buscar", name: nil, class: "btn btn-primary"
-      - if signed_in?
-        = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
-        = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
-      .clearfix
+    %hr
+    - if signed_in?
+      = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left"
+      = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left"
+      %br
+      %br
       %hr
+      .clearfix
   .col-md-10
     .clearfix
     - @posts.each do |post|
