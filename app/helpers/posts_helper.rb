@@ -9,7 +9,7 @@ module PostsHelper
     Post.all.each do |post|
       cat += post.categories
     end
-    cat.uniq.map(&:name)
+    cat.map(&:name).uniq
   end
 
   def uniq_tags
@@ -17,7 +17,7 @@ module PostsHelper
     Post.all.each do |post|
       tags += post.tags
     end
-    tags.uniq.map(&:name)
+    tags.map(&:name).uniq
   end
 
   def contains_category_name(post, name)

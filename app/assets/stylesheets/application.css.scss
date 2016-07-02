@@ -34,6 +34,13 @@ $dark-green:  #2b9326;
 $gray:        #d1d2d4;
 $dark-gray:   #a4a6a8;
 
+.post-line {
+  height:2px;
+  border:none;
+  color:$purple;
+  background-color:$purple;
+}
+
 /* font and size */
 
 h2, h3, h4, h5, h6, p, li, a, span, p, h1, a, li strong a, li a, th, td{
@@ -404,7 +411,7 @@ span.line {
 }
 
 .top_buttons {
-  margin-top: 25px;
+  margin-top: 15px;
 }
 
 .top_buttons_2 {
@@ -414,6 +421,10 @@ span.line {
 /* Labels */
 .label-category {
   color: $purple;
+}
+
+.label-normal {
+  color: #000000;
 }
 
 .label-tag {

@@ -1,16 +1,15 @@
 - provide(:title, "#{@post.unhyphen_title}")
 .container
   .col-md-12
-    = render partial: 'shared/categories'
     = link_to "Volver a los posts", root_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
     - if current_user
       = link_to "Editar", edit_post_path(@post), class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
     %h1= @post.unhyphen_title
     %span.line
     %hr
+    = render partial: 'shared/categories'
   .col-md-10
-    - if !@post.publish
-      %h1 ESTE POST NO ESTA PUBLICADO
+    %h1= "ESTE POST NO ESTA PUBLICADO" if !@post.publish
     .col-md-10.col-md-offset-1
       %center
         = image_tag(@post.avatar_url, class: "img_show")
@@ -33,4 +32,4 @@
             %br
             = comment.comment
   .col-md-2
-  = render partial: 'shared/tags'
+  = render partial: 'shared/tags', locals: { post: @post }

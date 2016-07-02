@@ -9,10 +9,12 @@
 %h2 Categorías
 - uniq_categories.each do |name|
   - if controller.controller_name == 'posts'
-    = link_to name, tag_path(name), class: "#{'label-category' if contains_category_name(@post, name)}"
-  = link_to name, tag_path(name), class: 'label-category'
+    = link_to name, tag_path(name), class: "#{contains_category_name(post, name) ? 'label-category' : 'label-normal' }"
+  - else
+    = link_to name, tag_path(name), class: 'label-category'
 %h2 Tags
 - uniq_tags.each do |name|
   - if controller.controller_name == 'posts'
-    = link_to name, tag_path(name), class: "#{'label-tag' if contains_tag_name(@post, name)}"
-  = link_to name, tag_path(name), class: 'label-tag'
+    = link_to name, tag_path(name), class: "#{contains_tag_name(post, name) ? 'label-tag' : 'label-normal'}"
+  - else
+    = link_to name, tag_path(name), class: 'label-tag'

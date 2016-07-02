@@ -1,35 +1,17 @@
 .container
   .col-md-12
+    - if signed_in?
+      = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
+      = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
     %h1 Blog de D0A3
     %span.line
     %hr
     %center
-      = image_tag("cover.jpg", class: "img-center img-responsive")
+    = image_tag("cover.jpg", class: "img-center img-responsive")
     = render 'shared/categories'
     %hr
-    - if signed_in?
-      = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left"
-      = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left"
-      %br
-      %br
-      %hr
       .clearfix
-  .col-md-10
-    .clearfix
     - @posts.each do |post|
-      .col-md-4
-        = link_to image_tag(post.avatar_url, class: "img_show img-responsive"), post_path(post)
-      .col-md-8
-      %h3= link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
-      %h5= post.created_at.strftime("%d %B %Y")
-      %h4= markdown(post.summary)
-      .clearfix
-      %hr{style: "height:2px;border:none;color:#793284;background-color:#793284;"}
-    %p De 0 a 3 es una organización enfocada al desarrollo infantil temprano, nos preocupamos por que el futuro de nuestro niños sea altamente productivo y este tenga repercusiones positivas que ayuden a una mejor sociedad. Es por eso que en este blog te encontrarás información y consejos de cómo impulsar el desarrollo cerebral de tu bebé, así como fomentar una buena relación contigo y el resto del entorno en el que crece.
-    %p En la parte de Artículos, podrás encontrar información detallada sobre el cuidado de tu bebé y cómo cubrir esas necesidades de la mejor manera y dependiendo su edad. Aunque cada niño es diferente, es necesario que aprendas acerca de las distintas situaciones que pueden presentarse a lo largo de su crecimiento.
-    %p Dentro de Actividades, encontrarás algunos juegos que puedes realizar con tu hijo para estimular mejor su funcionamiento cerebral y sus movimientos.
-    %p Puedes entrar a nuestros Casos de Éxito y ver cómo algunos niños se han beneficiado de este programa.
-    %p Por último, en la parte Social verás algunas sesiones especiales con nuestros niños y galería de fotos.
+      = render partial: 'shared/post', locals: { post: post }
   .col-md-2
-    = render partial: 'shared/tags'
 %center= will_paginate @posts
