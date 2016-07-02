@@ -5,7 +5,6 @@ class CategoriesController < ApplicationController
   def index
     if params[:tag]
       @tags         = Post.tagged_with(params[:tag])
-      @p_categories = Category.all
     else
       @tags         = Post.tag_counts
       @categories   = Post.category_counts

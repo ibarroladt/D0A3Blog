@@ -1,20 +1,19 @@
 %h2 Redes sociales
 = link_to 'https://twitter.com/DeCeroATres', target: '_blank' do
   %img{style: 'width: 40px;', src: "/twitter.png"}
-
 = link_to 'https://www.facebook.com/De-Cero-A-Tres-Fundaci%C3%B3n-311990848883647/', target: '_blank' do
   %img{style: 'width: 40px;', src: "/facebook.png"}
 = link_to 'https://www.youtube.com/user/ceroatres', target: '_blank' do
   %img{style: 'width: 40px;', src: "/youtube.png"}
 %h2 Categorías
 - uniq_categories.each do |name|
-  - if controller.controller_name == 'posts'
+  - if controller.controller_name == 'posts' && params[:action] == 'show'
     = link_to name, tag_path(name), class: "#{contains_category_name(post, name) ? 'label-category' : 'label-normal' }"
   - else
     = link_to name, tag_path(name), class: 'label-category'
 %h2 Tags
 - uniq_tags.each do |name|
-  - if controller.controller_name == 'posts'
+  - if controller.controller_name == 'posts' && params[:action] == 'show'
     = link_to name, tag_path(name), class: "#{contains_tag_name(post, name) ? 'label-tag' : 'label-normal'}"
   - else
     = link_to name, tag_path(name), class: 'label-tag'

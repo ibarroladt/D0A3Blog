@@ -10,8 +10,9 @@
     = image_tag("cover.jpg", class: "img-center img-responsive")
     = render 'shared/categories'
     %hr
-      .clearfix
+  .col-md-10
     - @posts.each do |post|
       = render partial: 'shared/post', locals: { post: post }
   .col-md-2
+    = render partial: 'shared/tags'
 %center= will_paginate @posts
