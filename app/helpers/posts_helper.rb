@@ -4,6 +4,21 @@ module PostsHelper
     ['Artículos', 'Actividades', 'Casos de Éxito', 'Tips', 'Social']
   end
 
+  def tag_color(m_c)
+    case m_c
+    when 'Social'
+      '#2b9326'
+    when 'Tips'
+      '#31b0d5'
+    when 'Articles'
+      '#8e4698'
+    when 'Success'
+      '#a4a6a8'
+    else
+      '#000000'
+    end
+  end
+
   def uniq_categories
     cat = []
     Post.all.each do |post|
