@@ -10,12 +10,12 @@ module PostsHelper
       '#2b9326'
     when 'Tips'
       '#31b0d5'
-    when 'Articles'
+    when 'Artículos'
       '#8e4698'
-    when 'Success'
-      '#a4a6a8'
+    when 'Actividades'
+      '#ffffff'
     else
-      '#000000'
+      '#a4a6a8'
     end
   end
 

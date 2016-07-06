@@ -5,7 +5,6 @@
     .col-md-8
     %h3= link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
     %h5= post.created_at.strftime("%d %B %Y")
-    %H5= tag_color(post.mother_category)
     %span.label.label-primary{style: "background-color:#{tag_color(post.mother_category)}"}= post.mother_category
     %h4= markdown(post.summary)
     .clearfix

@@ -2,7 +2,7 @@
   .col-md-12
     - if signed_in?
       = link_to "Crear post", new_post_path, class: "btn btn-primary pull-right edit-btn-margin-left top_buttons"
-      = link_to "Ver posts sin publicar post", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
+      = link_to "Sin publicar", unpublished_path, class: "btn btn-warning pull-right edit-btn-margin-left top_buttons"
     %h1 Blog de D0A3
     %span.line
     %hr
