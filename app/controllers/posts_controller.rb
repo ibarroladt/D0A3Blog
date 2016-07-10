@@ -24,15 +24,18 @@ class PostsController < ApplicationController
     end
   end
 
+  #/posts/:id
   def show
-    @post = Post.friendly.find(params[:id])
-  end
-
-  def edit
     @post = Post.friendly.find(params[:id])
     @post.increment!(:visits_count, 1) if !current_user
   end
 
+  #/posts/:id/edit
+  def edit
+    @post = Post.friendly.find(params[:id])
+  end
+
+  #/posts/new
   def new
     @post = Post.new
   end
@@ -66,6 +69,7 @@ class PostsController < ApplicationController
     redirect_to root_path
   end
 
+  #/posts/unpublished
   def unpublished
     @posts = Post.all.where(publish: false).paginate(page: params[:page], per_page: 30)
   end

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160710042903) do
+ActiveRecord::Schema.define(version: 20160710045629) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -90,7 +90,6 @@ ActiveRecord::Schema.define(version: 20160710042903) do
     t.boolean  "publish",         default: false
     t.string   "mother_category"
     t.string   "author"
-    t.integer  "visit_count",     default: 0
     t.integer  "visits_count",    default: 0
   end
 
