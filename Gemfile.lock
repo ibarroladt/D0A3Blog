@@ -1,3 +1,10 @@
+GIT
+  remote: git://github.com/deivid-rodriguez/byebug.git
+  revision: 744b8f2140dea4f28f15581d5a8cf400959f0792
+  branch: master
+  specs:
+    byebug (9.0.5)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -53,7 +60,6 @@ GEM
     bootstrap-sass (3.2.0.0)
       sass (~> 3.2)
     builder (3.2.2)
-    byebug (8.2.2)
     carrierwave (0.10.0)
       activemodel (>= 3.2.0)
       activesupport (>= 3.2.0)
@@ -337,7 +343,7 @@ DEPENDENCIES
   better_errors
   binding_of_caller
   bootstrap-sass (= 3.2.0.0)
-  byebug
+  byebug!
   carrierwave
   coffee-rails (~> 4.1.0)
   fog

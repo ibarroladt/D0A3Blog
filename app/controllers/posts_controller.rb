@@ -5,7 +5,7 @@ class PostsController < ApplicationController
   #/posts
   def index
     if params[:search]
-      @posts = Post.search_by_title(params[:search]).where(publish: true)
+      params[:search] == "" ? @posts = Post.where(publish: true).paginate(page: params[:page], per_page: 30) : @posts = Post.search_by_title(params[:search]).where(publish: true).paginate(page: params[:page], per_page: 30)
     else
       case params[:filter]
       when 'Social'

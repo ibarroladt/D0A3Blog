@@ -16,7 +16,8 @@
         %br
         = "#{@post.updated_at.strftime("%d %b %Y")}, Autor(a):"
         %i= @post.author
-        %h4= @post.mother_category
+        %br
+        %span.label.label-primary{style: "background-color:#{tag_color(@post.mother_category)}"}= @post.mother_category
         %br
         %h4
           %i= markdown(@post.summary)

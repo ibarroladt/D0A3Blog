@@ -8,7 +8,7 @@ class Post < ActiveRecord::Base
   acts_as_taggable_on :categories
   
   include PgSearch
-  pg_search_scope :search_by_title, :against => :title
+  pg_search_scope :search_by_title, against: :title, using: { tsearch: { prefix: true } }
   
   acts_as_commentable
 
