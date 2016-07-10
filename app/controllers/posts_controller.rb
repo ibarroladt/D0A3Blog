@@ -30,6 +30,7 @@ class PostsController < ApplicationController
 
   def edit
     @post = Post.friendly.find(params[:id])
+    @post.increment!(:visits_count, 1) if !current_user
   end
 
   def new
