@@ -4,7 +4,7 @@
       = link_to image_tag(post.avatar_url, class: "img_show img-responsive"), post_path(post)
     .col-md-8
     %h3= link_to "#{post.unhyphen_title}", post_path(post), {style:'color:#793284;', class: "post_link"}
-    %h5= post.created_at.strftime("%d %B %Y")
+    %h5= l(post.created_at, format: :default)
     = "#{post.visits_count} visitas "
     %span.glyphicon.glyphicon-eye-open
     %br
