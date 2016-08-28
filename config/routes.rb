@@ -1,5 +1,6 @@
 Rails.application.routes.draw do
 
+  mount Ckeditor::Engine => '/ckeditor'
   get "/posts/unpublished", to: "posts#unpublished", as: 'unpublished'
   root 'static_pages#home'
   resources :users

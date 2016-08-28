@@ -23,8 +23,8 @@
         = "#{@post.visits_count} visitas "
         %span.glyphicon.glyphicon-eye-open
         %h4
-          %i= markdown(@post.summary)
-      .content= markdown(@post.content)
+          %i= @post.summary
+      .content= @post.content.html_safe
       = simple_form_for @post.comments.create, url: comments_path do |f|
         = f.input :comment, label: "Deja tus comentarios", as: :text, input_html: { rows: 5 }, class: "form-control"
         = f.submit "Enviar comentarios", class: "btn btn-block btn-primary"

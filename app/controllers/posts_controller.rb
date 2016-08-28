@@ -42,7 +42,6 @@ class PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    byebug
     if @post.save
       flash[:success] = "Artículo creado exitósamente"
       redirect_to root_path
