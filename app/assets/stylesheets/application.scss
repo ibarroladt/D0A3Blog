@@ -421,14 +421,17 @@ span.line {
 /* Labels */
 .label-category {
   color: $purple;
+  background-color: #ebd2ef;
 }
 
 .label-normal {
   color: #000000;
+  background-color: #d2d5d8;
 }
 
 .label-tag {
   color: $green;
+  background-color: #c6f7c3;
 }
 
 .label-primary {
