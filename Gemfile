@@ -30,6 +30,7 @@ gem 'simple_form'
 
 # for formating posts like word
 gem 'ckeditor'
+gem "non-stupid-digest-assets"
 # for readable urls
 gem 'friendly_id'
 # for better html
