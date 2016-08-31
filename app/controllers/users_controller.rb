@@ -1,5 +1,7 @@
 class UsersController < ApplicationController
 
+  before_action :authenticate_admin!, except: [:new]
+
   def new
     @user = User.new
   end
@@ -43,6 +45,14 @@ class UsersController < ApplicationController
   end
 
   private
+
+    def authenticate_admin!
+      unless signed_in?
+        flash[:alert] = 'Inicia sesión'
+        redirect_to root_path
+      end
+    end
+
     def user_params
       params.require(:user).permit(:email, :password)
     end
